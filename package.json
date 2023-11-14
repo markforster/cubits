@@ -2,7 +2,6 @@
   "name": "@markforster/cubits",
   "version": "0.0.1",
   "description": "3x3 rubiks cube module with methods to rotate sides by colour and check if solved",
-  "private": true,
   "main": "./dist/index.js",
   "scripts": {
     "build": "./bin/build.sh",
@@ -13,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/markforster/cubits"
   },
-  "license": "ISC",
+  "license": "MIT",
   "engines": {
     "node": ">=14.6.0"
   },

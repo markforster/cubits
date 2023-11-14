@@ -6,6 +6,7 @@ dist/examples/**
 
 webpack.config.*
 jest.config.*
+tsconfig.json
 tsconfig.*.json
 nodemon.*
 bin/**
@@ -14,6 +15,8 @@ dist/**/*.test.js
 dist/**/*.test.d.ts
 
 /test-reports/**
+/examples/**
+/docs/**
 .eslintignore
 .eslintrc
 .prettierignore
