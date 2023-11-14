@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "experimentalDecorators": true,
+    "outDir": "dist",
+    "declaration": true,
+    "rootDir": "./src"
+  },
+  "transpileOnly": false,
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

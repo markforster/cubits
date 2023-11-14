@@ -1,0 +1,90 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "jsx-a11y",
+    "react",
+    "@typescript-eslint",
+    "import",
+    "jsx-a11y",
+    "react-hooks",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "react/jsx-curly-brace-presence": ["warn", { "props": "never", "children": "ignore" }],
+    "no-fallthrough": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "args": "all",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "react/no-unescaped-entities": "off",
+    "no-console": 0,
+    "no-unused-vars": 1,
+    "react/no-unused-prop-types": 1,
+    "react/require-default-props": 1,
+    "react/default-props-match-prop-types": 1,
+    "react/jsx-no-duplicate-props": 1,
+    "react/no-array-index-key": 1,
+    "react/display-name": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/label-has-associated-control": 1,
+    "no-nonoctal-decimal-escape": 0,
+    "no-unsafe-optional-chaining": 0,
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/await-thenable": 0,
+    "@typescript-eslint/no-floating-promises": 0,
+    "@typescript-eslint/no-for-in-array": 0,
+    "@typescript-eslint/no-misused-promises": 0,
+    "@typescript-eslint/no-unnecessary-type-assertion": 0,
+    "@typescript-eslint/restrict-plus-operands": 0,
+    "@typescript-eslint/restrict-template-expressions": 0,
+    "@typescript-eslint/unbound-method": 0,
+    "@typescript-eslint/consistent-type-assertions": [
+      1,
+      { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto",
+        "singleQuote": true
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
