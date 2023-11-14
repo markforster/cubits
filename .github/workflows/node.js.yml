@@ -29,3 +29,12 @@ jobs:
     - run: npm i
     - run: npm run build --if-present
     - run: npm test
+    - name: Create Awesome Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: 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
+        gistID: c101d6d2eb46daca41a0d4139367c468
+        filename: test.json # Use test.svg if you want to use the SVG mode.
+        label: Hello
+        message: World
+        color: orange
