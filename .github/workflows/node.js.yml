@@ -35,6 +35,9 @@ jobs:
         auth: ${{ secrets.GIST_SECRET }}
         gistID: c101d6d2eb46daca41a0d4139367c468
         filename: test.json # Use test.svg if you want to use the SVG mode.
-        label: Hello
-        message: World
-        color: orange
+        label: Test Coverage
+        message: ${{ env.COVERAGE }}
+        minColorRange: 0
+        maxColorRange: 100
+        valColorRange: ${{ env.COVERAGE }}
+        #color: orange
