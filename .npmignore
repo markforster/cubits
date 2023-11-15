@@ -20,3 +20,5 @@ dist/**/*.test.d.ts
 .eslintrc
 .prettierignore
 .prettierrc
+.github/**
+.npmrc*
