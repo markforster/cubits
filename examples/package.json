@@ -4,14 +4,17 @@
   "description": "folder of examples working with cube",
   "main": "index.js",
   "scripts": {
-    "start":"npm i && ts-node ./sandbox.ts",
+    "start": "npm i && ts-node ./sandbox.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "markforster",
   "license": "MIT",
   "dependencies": {
-    "cli-color": "^2.0.3",
     "@types/node": "^20.4.5",
+    "cli-color": "^2.0.3",
+    "cli-table3": "^0.6.3",
+    "i": "^0.3.7",
+    "npm": "^10.2.3",
     "ts-node": "^10.9.1"
   }
 }
