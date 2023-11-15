@@ -1,0 +1,17 @@
+{
+  "name": "@markforster/info.markforster.cubits.examples",
+  "version": "0.0.1",
+  "description": "folder of examples working with cube",
+  "main": "index.js",
+  "scripts": {
+    "start":"npm i && ts-node ./sandbox.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "markforster",
+  "license": "MIT",
+  "dependencies": {
+    "cli-color": "^2.0.3",
+    "@types/node": "^20.4.5",
+    "ts-node": "^10.9.1"
+  }
+}

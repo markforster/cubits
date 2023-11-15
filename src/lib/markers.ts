@@ -1,0 +1,12 @@
+import { COLOURS } from './colours';
+
+export const MARKERS = [4, 13, 22, 31, 40, 49];
+
+export enum SurfaceMarker {
+  WHITE = MARKERS[COLOURS.WHITE],
+  YELLOW = MARKERS[COLOURS.YELLOW],
+  GREEN = MARKERS[COLOURS.GREEN],
+  ORANGE = MARKERS[COLOURS.ORANGE],
+  RED = MARKERS[COLOURS.RED],
+  BLUE = MARKERS[COLOURS.BLUE],
+}
