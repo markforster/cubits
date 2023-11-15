@@ -1,6 +1,6 @@
 # Rubik's Cube TypeScript Library
 
-![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/markforster/c101d6d2eb46daca41a0d4139367c468/raw/test.json)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/markforster/c101d6d2eb46daca41a0d4139367c468/raw/ca333281b94846375a81830b186823f62fc3a465/test.json)
 
 This TypeScript library provides a representation of a Rubik's Cube and a set of functionalities to interact with it. The library is designed to be flexible and easily integrated into your projects. Below is a guide on how to work with the `ICube` interface and interact with a Rubik's Cube instance.
 
