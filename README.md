@@ -64,6 +64,37 @@ const cube: ICube = new Cube();
 cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
 ```
 
+### Overriding the cubes state
+
+The Cube uses an internal property called state to manage the information about the position and facing direction of a cubes cubits. This information is stored as an array of paired vertices [Vertex, Vertex].
+
+An instance of a cube can be created passing a CubeState to its constructor allowing you to see changes made to the cubes representation via the ICube interface. 
+
+> [!CAUTION]
+> Cubestate is intentionally hidden within a Cube instance. Work is ongoing to expose cubestate via its private property as readonly but this feature is yet to be added. Caution should be taken directly accessing the cube state as changes to the inner Vertices could cause features to break.
+
+```typescript
+import {
+  Cube,
+  ICube,
+  AxisVertex,
+  CubeRotationDirection,
+  CubeState,
+  newCubeState,
+} from '@markforster/cubits';
+
+const cubeState: CubeState = newCubeState();
+const cube: ICube = new Cube(cubeState);
+
+// Output the current cubestate
+console.log(cubeState);
+
+cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
+
+// Output the cubestate after the cube has been rotated
+console.log(cubeState);
+```
+
 ## Examples
 
 Check the [examples](./examples) directory for additional usage scenarios and demonstrations.
