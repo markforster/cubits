@@ -38,13 +38,9 @@ const cube: ICube = new Cube();
 ```typescript
 import { COLOURS } from '@markforster/cubits';
 
-const colWhite: COLOURS = COLOURS.WHITE;
-const colRed: COLOURS = COLOURS.RED;
-const colBlue: COLOURS = COLOURS.BLUE;
-
-console.log(`Solved for colour ${COLOURS[colWhite]}:`, cube.solved(colWhite));
-console.log(`Solved for colour ${COLOURS[colRed]}:`, cube.solved(colRed));
-console.log(`Solved for colour ${COLOURS[colBlue]}:`, cube.solved(colBlue));
+console.log(`Solved for colour ${COLOURS[COLOURS.WHITE]}:`, cube.solved(COLOURS.WHITE));
+console.log(`Solved for colour ${COLOURS[COLOURS.RED]}:`, cube.solved(COLOURS.RED));
+console.log(`Solved for colour ${COLOURS[COLOURS.BLUE]}:`, cube.solved(COLOURS.BLUE));
 console.log(`Solved for ALL:`, cube.solved());
 ```
 
@@ -54,6 +50,14 @@ console.log(`Solved for ALL:`, cube.solved());
 import { CubeRotationDirection } from '@markforster/cubits';
 
 cube.rotateLayerForColour(COLOURS.BLUE, CubeRotationDirection.ClockWise);
+```
+
+### Rotating the Cube
+
+```typescript
+import { CubeRotationDirection } from '@markforster/cubits';
+
+cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
 ```
 
 ## Examples
