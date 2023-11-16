@@ -27,8 +27,7 @@ npm install @markforster/cubits
 ### Initializing a Rubik's Cube
 
 ```typescript
-import { Cube } from '@markforster/cubits';
-import { ICube } from '@markforster/cubits';
+import { Cube, ICube } from '@markforster/cubits';
 
 const cube: ICube = new Cube();
 ```
@@ -36,24 +35,33 @@ const cube: ICube = new Cube();
 ### Checking the Cube's State
 
 ```typescript
-import { COLOURS } from '@markforster/cubits';
+import { COLOURS, ICube, AxisVertex } from '@markforster/cubits';
 
-const colWhite: COLOURS = COLOURS.WHITE;
-const colRed: COLOURS = COLOURS.RED;
-const colBlue: COLOURS = COLOURS.BLUE;
+const cube: ICube = new Cube();
 
-console.log(`Solved for colour ${COLOURS[colWhite]}:`, cube.solved(colWhite));
-console.log(`Solved for colour ${COLOURS[colRed]}:`, cube.solved(colRed));
-console.log(`Solved for colour ${COLOURS[colBlue]}:`, cube.solved(colBlue));
+console.log(`Solved for colour ${COLOURS[COLOURS.WHITE]}:`, cube.solved(COLOURS.WHITE));
+console.log(`Solved for colour ${COLOURS[COLOURS.RED]}:`, cube.solved(COLOURS.RED));
+console.log(`Solved for colour ${COLOURS[COLOURS.BLUE]}:`, cube.solved(COLOURS.BLUE));
 console.log(`Solved for ALL:`, cube.solved());
 ```
 
 ### Rotating a Cube Layer
 
 ```typescript
-import { CubeRotationDirection } from '@markforster/cubits';
+import { CubeRotationDirection, ICube, COLOURS } from '@markforster/cubits';
+
+const cube: ICube = new Cube();
 
 cube.rotateLayerForColour(COLOURS.BLUE, CubeRotationDirection.ClockWise);
+```
+
+### Rotating the Cube
+
+```typescript
+import { Cube, ICube, AxisVertex, CubeRotationDirection } from "@markforster/cubits"
+
+const cube: ICube = new Cube();
+cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
 ```
 
 ## Examples
