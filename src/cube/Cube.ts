@@ -1,12 +1,13 @@
 import { CubeState } from '.';
-import { rotateVectorsAtIndeces } from '../lib';
+import { AxisVertex, rotateVectorsAtIndeces } from '../lib';
 import { COLOURS } from '../lib/colours';
 import { newCubeState } from '../lib/factory';
+import { orientateFaceToDirection } from '../lib/orientateFaceToDirection';
 import { rotateLayerForColour } from '../lib/rotateLayerForColour';
 import { FULL_ROTATION } from '../lib/rotation';
 import { solved } from '../lib/solution/solved';
 import { ICube } from './ICube';
-import { Vertex, CubeRotationDirection } from './lib';
+import { Vertex, CubeRotationDirection, Orientation } from './lib';
 
 export class Cube implements ICube {
   readonly state: CubeState;
@@ -17,6 +18,22 @@ export class Cube implements ICube {
 
   solved(colour?: COLOURS): boolean {
     return solved(this.state, colour);
+  }
+
+  orientate(orientation: Orientation) {
+    orientateFaceToDirection(
+      this.state,
+      orientation.top,
+      [0, 2, 0],
+      // [AxisVertex.ROLL, AxisVertex.YAW, AxisVertex.PITCH],
+    );
+
+    orientateFaceToDirection(
+      this.state,
+      orientation.left,
+      [-2, 0, 0],
+      // [AxisVertex.YAW, AxisVertex.YAW, AxisVertex.YAW],
+    );
   }
 
   rotate(axis: Vertex, direction: CubeRotationDirection) {
