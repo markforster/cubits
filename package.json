@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/markforster/cubits"
   },
+  "bugs": {
+    "url": "https://github.com/markforster/cubits/issues"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=14.6.0"
