@@ -37,6 +37,8 @@ const cube: ICube = new Cube();
 
 ```typescript
 import { COLOURS } from '@markforster/cubits';
+import { AxisVertex } from '@markforster/cubits/lib/';
+
 
 console.log(`Solved for colour ${COLOURS[COLOURS.WHITE]}:`, cube.solved(COLOURS.WHITE));
 console.log(`Solved for colour ${COLOURS[COLOURS.RED]}:`, cube.solved(COLOURS.RED));
@@ -56,6 +58,7 @@ cube.rotateLayerForColour(COLOURS.BLUE, CubeRotationDirection.ClockWise);
 
 ```typescript
 import { CubeRotationDirection } from '@markforster/cubits';
+import { AxisVertex, CubeRotationDirection } from '@markforster/cubits/lib/';
 
 cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
 ```
