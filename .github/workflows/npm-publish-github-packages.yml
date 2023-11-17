@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - run: npm i
       - run: ./bin/build.sh
       - run: npm publish
         env:
@@ -41,6 +42,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+      - run: npm i
       - run: ./bin/build.sh
       - run: npm publish
         env:
