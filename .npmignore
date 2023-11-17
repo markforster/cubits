@@ -22,5 +22,5 @@ dist/**/*.test.d.ts
 .prettierrc
 .github/**
 .npmrc*
-
+**copy.json
 CODE_OF_CONDUCT.md
