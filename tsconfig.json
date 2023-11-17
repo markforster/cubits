@@ -5,7 +5,12 @@
     "outDir": "dist",
     "declaration": true,
     "rootDir": "./src",
-    "removeComments": true
+    "removeComments": true,
+    "lib":[
+      "es2015"
+    ],
+    "noImplicitAny": true,
+    "moduleResolution": "node"
   },
   "transpileOnly": false,
   "include": ["src"],

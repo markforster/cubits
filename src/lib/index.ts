@@ -68,15 +68,15 @@ export const rotateVectorsAtIndeces = (
   cubeState: CubeState,
   indeces: number[],
   angle: number,
-  axis: number[],
+  axis: Vertex,
 ) => {
   const rads = toRadians(angle);
 
   const points = indeces.map((ind: number) => cubeState[ind][0]);
   const normals = indeces.map((ind: number) => cubeState[ind][1]);
 
-  const p = rotate3DPoints(points, axis, rads);
-  const n = rotate3DPoints(normals, axis, rads);
+  const p: Vertex[] = rotate3DPoints(points, axis, rads);
+  const n: Vertex[] = rotate3DPoints(normals, axis, rads);
 
   for (let i = 0; i < indeces.length; i++) {
     cubeState[indeces[i]][0] = p[i];

@@ -134,5 +134,5 @@ dist
 # NPM
 .npmrc
 .npmrc*
-
+**copy.json
 docs/
