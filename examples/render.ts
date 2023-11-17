@@ -6,7 +6,7 @@ import { COLOURS } from '../src/lib/colours';
 import { colourForIndex } from '../src/lib/colourForIndex';
 import { Vector } from '../src/cube/lib';
 
-const n = null;
+const n: any = null;
 
 const consoleColors: any = {
   [n]: 0,
@@ -29,7 +29,7 @@ enum FACE {
 
 const FL = ['U', 'F', 'D', 'B', 'L', 'R'];
 
-const map: number[][] = [
+const map: (number | null)[][] = [
   [n, n, n, n, n, n, n, n, n],
   [n, n, n, n, n, n, n, n, n],
   [n, n, n, n, n, n, n, n, n],
@@ -59,9 +59,7 @@ const map2: number[][] = [
   [n, n, n, n, n, n, n, n, n],
 ];
 
-const MSYM = {};
-
-const lookup = {
+const lookup: Record<string, [number, number]> = {
   // Top Face
   '-11-1-12-1': [3, 5],
   '01-102-1': [4, 5],
@@ -132,23 +130,22 @@ const lookup = {
 export const render = (cubeState: CubeState, padding?: number): string => {
   cubeState.forEach((v: Vector, index: number) => {
     const key = `${v[0][0]}${v[0][1]}${v[0][2]}${v[1][0]}${v[1][1]}${v[1][2]}`;
+
     if (lookup[key]) {
-      map[lookup[key][1]][lookup[key][0]] = lookup[key]
-        ? colourForIndex(index)
-        : null;
+      const coords: [number, number] = lookup[key];
+      // map[coords[1]][coords[0]] = null;
+      map[coords[1]][coords[0]] = lookup[key] ? colourForIndex(index) : null;
     }
   });
 
   const s: any = map
-    .map((c: number[], ci: number) => {
+    .map((c: (number | null)[], ci: number) => {
       return `${' '.repeat(padding || 0)}${c
-        .map((d: number, di) => {
+        .map((d: number | null, di) => {
           const ltr = map2[ci][di] !== null ? `${FL[map2[ci][di]]} ` : '█ ';
           const bgc = map2[ci][di] !== null ? 0 : 0;
-          const fgc =
-            map2[ci][di] !== null ? consoleColors[d] : consoleColors[d];
+          const fgc = map2[ci][di] !== null && d ? consoleColors[d] : consoleColors[d];
 
-          // return clc.xterm(consoleColors[d])('█ ');
           return clc.xterm(fgc).bgXterm(bgc)(ltr);
         })
         .reduce((v, s) => `${v}${s}`)}${ci !== map.length - 1 ? '\n' : ''}`;

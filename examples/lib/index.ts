@@ -16,20 +16,20 @@ export const consoleColors: any = {
   [COLOURS.RED]: 160,
 };
 
-export const StringIsNumber = (value) => isNaN(Number(value)) === false;
-export const NotStringIsNumber = (value) => isNaN(Number(value)) === true;
+export const StringIsNumber = (value: any) => isNaN(Number(value)) === false;
+export const NotStringIsNumber = (value: any) => isNaN(Number(value)) === true;
 
 // Turn enum into array
-export function KeysForEnum(enumme): any[] {
-  return Object.keys(enumme)
+export function KeysForEnum(_enum: any): any[] {
+  return Object.keys(_enum)
     .filter(StringIsNumber)
-    .map((key) => enumme[key]);
+    .map((key) => _enum[key]);
 }
 
-export function ValuesForEnum(enumme): any[] {
-  return Object.keys(enumme)
+export function ValuesForEnum(_enum: any): any[] {
+  return Object.keys(_enum)
     .filter(NotStringIsNumber)
-    .map((key) => enumme[key]);
+    .map((key) => _enum[key]);
 }
 
 export const showCubeDetails = (cube: ICube, title?: string) => {
