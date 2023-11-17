@@ -4,7 +4,8 @@
     "experimentalDecorators": true,
     "outDir": "dist",
     "declaration": true,
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "removeComments": true
   },
   "transpileOnly": false,
   "include": ["src"],
