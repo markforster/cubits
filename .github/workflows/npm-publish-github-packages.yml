@@ -14,7 +14,6 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm test
-      - run: ./bin/build.sh
 
   publish-npm:
     needs: build
@@ -25,11 +24,12 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - run: ./bin/build.sh
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   
-  publish-gpr:
+  publish-gpm:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -41,6 +41,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+      - run: ./bin/build.sh
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GPM_TOKEN}}
