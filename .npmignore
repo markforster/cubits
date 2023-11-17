@@ -20,3 +20,7 @@ dist/**/*.test.d.ts
 .eslintrc
 .prettierignore
 .prettierrc
+.github/**
+.npmrc*
+**copy.json
+CODE_OF_CONDUCT.md

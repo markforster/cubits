@@ -1,3 +1,5 @@
+import { Vertex } from '../cube/lib';
+
 export const FULL_ROTATION = 90.0;
 
 export const CLOCKWISE = FULL_ROTATION;
@@ -19,7 +21,11 @@ export const ANTI_CLOCKWISE = -CLOCKWISE;
  * const rotatedPoint = rotate3DPoint(point, axis, angle);
  * console.log(rotatedPoint); // Output: [0, 1, 0]
  */
-export function rotate3DPoint(point, axis, angle) {
+export function rotate3DPoint(
+  point: Vertex,
+  axis: Vertex,
+  angle: number,
+): Vertex {
   const [x, y, z] = point;
   const [u, v, w] = axis;
   const cosAngle = Math.cos(angle);
@@ -64,12 +70,16 @@ export function rotate3DPoint(point, axis, angle) {
  * console.log(rotatedPoints);
  * // Output: [ [ 0, 1, 0 ], [ -1, 0, 0 ], [ 0, 0, 1 ] ]
  */
-export function rotate3DPoints(points, axis, angle) {
+export function rotate3DPoints(
+  points: Vertex[],
+  axis: Vertex,
+  angle: number,
+): Vertex[] {
   return points.map((point) => {
     return sanitisePoint(rotate3DPoint(point, axis, angle));
   });
 }
 
-function sanitisePoint(point: number[]) {
-  return point.map((p: number) => Math.round(p));
+function sanitisePoint(point: Vertex): Vertex {
+  return point.map((p: number) => Math.round(p)) as Vertex;
 }

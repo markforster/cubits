@@ -4,7 +4,13 @@
     "experimentalDecorators": true,
     "outDir": "dist",
     "declaration": true,
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "removeComments": true,
+    "lib":[
+      "es2015"
+    ],
+    "noImplicitAny": true,
+    "moduleResolution": "node",
   },
   "transpileOnly": false,
   "include": ["src"],

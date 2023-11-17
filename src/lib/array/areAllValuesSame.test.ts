@@ -1,7 +1,7 @@
 import { areAllValuesSame } from './areAllValuesSame';
 
 describe('An empty array should return true', () => {
-  const array1 = [];
+  const array1: any[] = [];
 
   it('Should return true', () => {
     expect(areAllValuesSame(array1)).toBe(true);
