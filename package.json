@@ -29,6 +29,7 @@
     "@types/copy-webpack-plugin": "^10.1.0",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.9.1",
+    "@types/webpack": "^5.28.5",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "bundle-declarations-webpack-plugin": "^4.0.1",

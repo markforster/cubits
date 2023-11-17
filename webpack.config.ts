@@ -1,15 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack');
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const nodeExternals = require('webpack-node-externals');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const bdp = require('bundle-declarations-webpack-plugin');
 
-const config = {
+export default {
   mode: process.env.NODE_ENV || 'development',
   entry: './src/index.ts',
   module: {
@@ -48,5 +43,3 @@ const config = {
     assets: true,
   },
 };
-
-module.exports = [config];
