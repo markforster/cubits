@@ -13,7 +13,9 @@
  * console.log(color2); // Output: 1
  */
 
-export function colourForIndex(index: number): number {
+import { COLOURS } from './colours';
+
+export function colourForIndex(index: number): COLOURS {
   // Improving the code: Add input validation to handle non-numeric and negative index values.
   if (typeof index !== 'number' || isNaN(index) || index < 0) {
     throw new Error(
@@ -22,5 +24,5 @@ export function colourForIndex(index: number): number {
   }
 
   // Calculate the color value by dividing the index by 9 and rounding down.
-  return Math.floor(index / 9.0);
+  return Math.floor(index / 9.0) as COLOURS;
 }
