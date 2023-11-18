@@ -61,6 +61,7 @@ import { Vector } from './lib';
 *
 * @public
 */
+
 export type CubeState = [
   Vector, Vector, Vector, Vector, Vector, Vector, Vector, Vector, Vector,
   Vector, Vector, Vector, Vector, Vector, Vector, Vector, Vector, Vector,

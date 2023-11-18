@@ -1,20 +1,20 @@
 {
-    "compilerOptions": {
-      "target": "ES5",
-      "module": "es6",
-      "experimentalDecorators": true,
-      "outDir": "dist",
-      "rootDir": "./src",
-      "removeComments": true,
-      "lib":[
-        "es2015"
-      ],
-      "esModuleInterop":true,
-      "allowSyntheticDefaultImports": true,
-      "noImplicitAny": true,
-      "moduleResolution": "node",
-    },
-    "transpileOnly": false,
-    "include": ["src"],
-    "exclude": ["node_modules", "src/lib/tests", "**/*.test.ts"]
-  }
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "es6",
+    "experimentalDecorators": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "removeComments": true,
+    "lib":[
+      "es2015"
+    ],
+    "esModuleInterop":true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node"
+  },
+  "transpileOnly": false,
+  "include": ["src"],
+  "exclude": ["node_modules", "src/lib/tests", "**/*.test.ts"]
+}

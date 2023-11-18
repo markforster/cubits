@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const webpack = require('webpack');
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
-const bdp = require('bundle-declarations-webpack-plugin');
+import * as path from 'path';
+import * as nodeExternals from 'webpack-node-externals';
+import { BannerPlugin } from 'webpack';
+import BundleDeclarationsWebpackPlugin from 'bundle-declarations-webpack-plugin';
 
 export default {
   mode: process.env.NODE_ENV || 'development',
@@ -32,8 +31,8 @@ export default {
     __dirname: false,
   },
   plugins: [
-    new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
-    new bdp.BundleDeclarationsWebpackPlugin({
+    new BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
+    new BundleDeclarationsWebpackPlugin({
       entry: ['./src/index.ts'],
       outFile: 'index.d.ts',
     }),
