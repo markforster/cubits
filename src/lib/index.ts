@@ -11,13 +11,15 @@ const YAW = [0, 1, 0]; //  Left and Right around the normal (vertical axis)
 // const ROLL   = [0, 0, 1];  //  Left and Right around longitudinal axis!!
 const ROLL = [0, 0, -1]; //  Left and Right around longitudinal axis!!
 
-export const AxisVertex = Object.freeze({
+// const t: any = { ASDASD: 10 };
+//Record<string, [number, number]>
+export const AxisVertex: Record<string, Vertex> = Object.freeze({
   PITCH: PITCH as Vertex,
   YAW: YAW as Vertex,
   ROLL: ROLL as Vertex,
 } as const);
 
-export const LayersVertex = Object.freeze({
+export const LayersVertex: Record<string, Vertex> = Object.freeze({
   TOP: [0, 1, 0] as Vertex,
   BOTTOM: [0, -1, 0] as Vertex,
   FRONT: [0, 0, -1] as Vertex,
@@ -27,7 +29,7 @@ export const LayersVertex = Object.freeze({
   // Add more matrices as needed
 } as const);
 
-export const NormlasVertex = Object.freeze({
+export const NormlasVertex: Record<string, Vertex> = Object.freeze({
   TOP: [0, 2, 0] as Vertex,
   BOTTOM: [0, -2, 0] as Vertex,
   FRONT: [0, 0, -2] as Vertex,
