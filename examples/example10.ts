@@ -5,7 +5,7 @@ import { CubeRotationDirection, Vertex } from '../src/cube/lib';
 import { colourForIndex } from '../src/lib/colourForIndex';
 import { COLOURS } from '../src/lib/colours';
 import { newCubeState } from '../src/lib/factory';
-import { indecesForNormal } from '../src/lib/indecesForNormal';
+import { indicesForNormal } from '../src/lib/indicesForNormal';
 import { layerNormalForColour } from '../src/lib/layerVertexForColour';
 
 const logColoursForColourToConsole = (
@@ -13,7 +13,7 @@ const logColoursForColourToConsole = (
   colour: COLOURS,
 ) => {
   const lnfc: Vertex = layerNormalForColour(cubeState, colour);
-  const indices: any[] = indecesForNormal(cubeState, lnfc);
+  const indices: any[] = indicesForNormal(cubeState, lnfc);
   const colours: any[] = indices.map((i: number) => colourForIndex(i));
 
   console.log(

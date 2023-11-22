@@ -1,5 +1,5 @@
 import { CubeState } from '.';
-import { rotateVectorsAtIndeces } from '../lib';
+import { rotateVectorsAtindices } from '../lib';
 import { COLOURS } from '../lib/colours';
 import { FaceOption } from '../lib/face';
 import { faceForFaceOption } from '../lib/face/faceForFaceOption';
@@ -28,7 +28,7 @@ export class Cube implements ICube {
 
   rotate(axis: Vertex, direction: CubeRotationDirection) {
     const angle = direction * FULL_ROTATION;
-    rotateVectorsAtIndeces(
+    rotateVectorsAtindices(
       this.state,
       this.state.map((_v: any, i: number) => i),
       angle,

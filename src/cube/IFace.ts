@@ -8,7 +8,7 @@ export type FacePositions = Vertex[];
 export interface IFace {
   readonly option: FaceOption;
   readonly colours: FaceColors;
-  readonly indeces: number[];
+  readonly indices: number[];
   readonly normals: FaceNormals;
   readonly positions: FacePositions;
 }

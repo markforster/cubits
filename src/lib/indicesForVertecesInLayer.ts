@@ -20,10 +20,10 @@ import { primaryUnit } from './primaryUnit';
  *   [[0, 0, 1], [0, 0, 1]], // Vector 3
  * ];
  * const layer = [0, 1, 0];
- * const indices = indecesForVertecesInLayer(cubeState, layer);
+ * const indices = indicesForVertecesInLayer(cubeState, layer);
  * console.log(indices); // Output: [0, 2]
  */
-export const indecesForVertecesInLayer = (
+export const indicesForVertecesInLayer = (
   cubeState: CubeState,
   layer: Vertex,
 ): number[] => {

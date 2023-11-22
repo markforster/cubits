@@ -1,5 +1,5 @@
 export { colourForIndex } from './lib/colourForIndex';
-export { indecesForNormal } from './lib/indecesForNormal';
+export { indicesForNormal } from './lib/indicesForNormal';
 export { layerNormalForColour } from './lib/layerVertexForColour';
 export { newCubeState } from './lib/factory';
 export { faceForFaceOption } from './lib/face/faceForFaceOption';

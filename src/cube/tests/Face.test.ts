@@ -35,28 +35,28 @@ describe('Face should provide the IFace interace', () => {
     );
   });
 
-  it('Should return the correct indeces for a face option specified in its constructor', () => {
-    expect(faceForFaceOption(cubeState, FaceOption.TOP).indeces).toEqual(
+  it('Should return the correct indices for a face option specified in its constructor', () => {
+    expect(faceForFaceOption(cubeState, FaceOption.TOP).indices).toEqual(
       lib.INDICES_FOR_WHITE,
     );
 
-    expect(faceForFaceOption(cubeState, FaceOption.BOTTOM).indeces).toEqual(
+    expect(faceForFaceOption(cubeState, FaceOption.BOTTOM).indices).toEqual(
       lib.INDICES_FOR_YELLOW,
     );
 
-    expect(faceForFaceOption(cubeState, FaceOption.BACK).indeces).toEqual(
+    expect(faceForFaceOption(cubeState, FaceOption.BACK).indices).toEqual(
       lib.INDICES_FOR_BLUE,
     );
 
-    expect(faceForFaceOption(cubeState, FaceOption.FRONT).indeces).toEqual(
+    expect(faceForFaceOption(cubeState, FaceOption.FRONT).indices).toEqual(
       lib.INDICES_FOR_GREEN,
     );
 
-    expect(faceForFaceOption(cubeState, FaceOption.LEFT).indeces).toEqual(
+    expect(faceForFaceOption(cubeState, FaceOption.LEFT).indices).toEqual(
       lib.INDICES_FOR_ORANGE,
     );
 
-    expect(faceForFaceOption(cubeState, FaceOption.RIGHT).indeces).toEqual(
+    expect(faceForFaceOption(cubeState, FaceOption.RIGHT).indices).toEqual(
       lib.INDICES_FOR_RED,
     );
   });
@@ -107,8 +107,8 @@ describe('Face should provide the IFace interace', () => {
     );
   });
 
-  it('Should return the correct indeces for a top face', () => {
-    expect(faceForFaceOption(cubeState, FaceOption.WHITE).indeces).toEqual(
+  it('Should return the correct indices for a top face', () => {
+    expect(faceForFaceOption(cubeState, FaceOption.WHITE).indices).toEqual(
       lib.INDICES_FOR_WHITE,
     );
   });

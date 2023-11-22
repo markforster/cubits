@@ -114,12 +114,12 @@ const lnfc: Vertex = layerNormalForColour(cubeState, colour);
 
 For a default cubestate, calling `layerNormalForColour` passing the colour `COLOURS.BLUE` will return a `Vertex` `[0, 0, 2]`. This is because by default the BLUE face of a new cube is at the back of the cube model.
 
-Now that we have the normal for the Blue face of the cube we can query `indecesForNormal` passing the normal Vertex to get a list of indices of all cubits that match this normal.
+Now that we have the normal for the Blue face of the cube we can query `indicesForNormal` passing the normal Vertex to get a list of indices of all cubits that match this normal.
 ```typescript
-const ifn: number[] = indecesForNormal(cubeState, lnfc);
+const ifn: number[] = indicesForNormal(cubeState, lnfc);
 ```
 
-`indecesForNormal` will return an array of indices that match the normal we passed to it. With the indices we can make a call to `colourForIndex` for each and get the corresponding `COLOURS` enum.
+`indicesForNormal` will return an array of indices that match the normal we passed to it. With the indices we can make a call to `colourForIndex` for each and get the corresponding `COLOURS` enum.
 
 ```typescript
 const cfi: COLOURS[] = ifn.map((i: number) => {
@@ -145,7 +145,7 @@ import {
   newCubeState,
   COLOURS,
   layerNormalForColour,
-  indecesForNormal,
+  indicesForNormal,
   Vertex,
   colourForIndex
 } from '@markforster/cubits';
@@ -155,7 +155,7 @@ const logColoursForColourToConsole = (
   colour: COLOURS,
 ) => {
   const lnfc: Vertex = layerNormalForColour(cubeState, colour);
-  const ifn: number[] = indecesForNormal(cubeState, lnfc);
+  const ifn: number[] = indicesForNormal(cubeState, lnfc);
   const cfi: COLOURS[] = ifn.map((i: number) => colourForIndex(i));
 
   console.log(

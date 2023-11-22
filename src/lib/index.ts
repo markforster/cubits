@@ -49,34 +49,34 @@ export { isCenter } from './isCenter';
 
 // export { primaryUnit } from "./primaryUnit";
 
-export { indecesForNormal } from './indecesForNormal';
+export { indicesForNormal } from './indicesForNormal';
 
 // This can help us get all vectors of a cube layer
 /*
-  Goal : Get the indeces of all verteces that are on the same layer
+  Goal : Get the indices of all verteces that are on the same layer
 
   1) Get the primary unit. [ 0, 1, 0 ] would be all that are in the top layer
   2) Get all vectors that share this primary unit!
-  3) we should have the indeces!
+  3) we should have the indices!
 */
-export { indecesForVertecesInLayer } from './indecesForVertecesInLayer';
+export { indicesForVertecesInLayer } from './indicesForVertecesInLayer';
 
-export const rotateVectorsAtIndeces = (
+export const rotateVectorsAtindices = (
   cubeState: CubeState,
-  indeces: number[],
+  indices: number[],
   angle: number,
   axis: Vertex,
 ) => {
   const rads = toRadians(angle);
 
-  const points = indeces.map((ind: number) => cubeState[ind][0]);
-  const normals = indeces.map((ind: number) => cubeState[ind][1]);
+  const points = indices.map((ind: number) => cubeState[ind][0]);
+  const normals = indices.map((ind: number) => cubeState[ind][1]);
 
   const p: Vertex[] = rotate3DPoints(points, axis, rads);
   const n: Vertex[] = rotate3DPoints(normals, axis, rads);
 
-  for (let i = 0; i < indeces.length; i++) {
-    cubeState[indeces[i]][0] = p[i];
-    cubeState[indeces[i]][1] = n[i];
+  for (let i = 0; i < indices.length; i++) {
+    cubeState[indices[i]][0] = p[i];
+    cubeState[indices[i]][1] = n[i];
   }
 };
