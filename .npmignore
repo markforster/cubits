@@ -16,6 +16,7 @@ dist/**/*.test.d.ts
 /test-reports/**
 /examples/**
 /docs/**
+coverage/**
 .eslintignore
 .eslintrc
 .prettierignore

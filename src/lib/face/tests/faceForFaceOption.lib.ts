@@ -1,0 +1,104 @@
+import { COLOURS } from '../../colours';
+
+export const ALL_WHITE_COLOURS = [
+  COLOURS.WHITE,
+  COLOURS.WHITE,
+  COLOURS.WHITE,
+  COLOURS.WHITE,
+  COLOURS.WHITE,
+  COLOURS.WHITE,
+  COLOURS.WHITE,
+  COLOURS.WHITE,
+  COLOURS.WHITE,
+];
+
+export const ALL_YELLOW_COLOURS = [
+  COLOURS.YELLOW,
+  COLOURS.YELLOW,
+  COLOURS.YELLOW,
+  COLOURS.YELLOW,
+  COLOURS.YELLOW,
+  COLOURS.YELLOW,
+  COLOURS.YELLOW,
+  COLOURS.YELLOW,
+  COLOURS.YELLOW,
+];
+
+export const ALL_BLUE_COLOURS = [
+  COLOURS.BLUE,
+  COLOURS.BLUE,
+  COLOURS.BLUE,
+  COLOURS.BLUE,
+  COLOURS.BLUE,
+  COLOURS.BLUE,
+  COLOURS.BLUE,
+  COLOURS.BLUE,
+  COLOURS.BLUE,
+];
+
+export const ALL_GREEN_COLOURS = [
+  COLOURS.GREEN,
+  COLOURS.GREEN,
+  COLOURS.GREEN,
+  COLOURS.GREEN,
+  COLOURS.GREEN,
+  COLOURS.GREEN,
+  COLOURS.GREEN,
+  COLOURS.GREEN,
+  COLOURS.GREEN,
+];
+
+export const ALL_RED_COLOURS = [
+  COLOURS.RED,
+  COLOURS.RED,
+  COLOURS.RED,
+  COLOURS.RED,
+  COLOURS.RED,
+  COLOURS.RED,
+  COLOURS.RED,
+  COLOURS.RED,
+  COLOURS.RED,
+];
+
+export const ALL_ORANGE_COLOURS = [
+  COLOURS.ORANGE,
+  COLOURS.ORANGE,
+  COLOURS.ORANGE,
+  COLOURS.ORANGE,
+  COLOURS.ORANGE,
+  COLOURS.ORANGE,
+  COLOURS.ORANGE,
+  COLOURS.ORANGE,
+  COLOURS.ORANGE,
+];
+
+export const INDICES_FOR_WHITE = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+export const INDICES_FOR_YELLOW = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+export const INDICES_FOR_GREEN = [18, 19, 20, 21, 22, 23, 24, 25, 26];
+export const INDICES_FOR_BLUE = [27, 28, 29, 30, 31, 32, 33, 34, 35];
+export const INDICES_FOR_ORANGE = [36, 37, 38, 39, 40, 41, 42, 43, 44];
+export const INDICES_FOR_RED = [45, 46, 47, 48, 49, 50, 51, 52, 53];
+
+export const NORMALS_FOR_WHITE = [
+  [-1, 2, -1],
+  [0, 2, -1],
+  [1, 2, -1],
+  [-1, 2, 0],
+  [0, 2, 0],
+  [1, 2, 0],
+  [-1, 2, 1],
+  [0, 2, 1],
+  [1, 2, 1],
+];
+
+export const POSITIONS_FOR_WHITE = [
+  [-1, 1, -1],
+  [0, 1, -1],
+  [1, 1, -1],
+  [-1, 1, 0],
+  [0, 1, 0],
+  [1, 1, 0],
+  [-1, 1, 1],
+  [0, 1, 1],
+  [1, 1, 1],
+];
