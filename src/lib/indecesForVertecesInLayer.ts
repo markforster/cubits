@@ -4,11 +4,11 @@ import { Vertex, Vector } from '../cube/lib';
 import { primaryUnit } from './primaryUnit';
 
 /**
- * Returns an array of indices representing the vertices within the specified layer of the Rubik's Cube.
- * @param {CubeState} cubeState - The state of the Rubik's Cube represented as an array of vectors.
+ * Returns an array of indices representing the vertices within the specified layer of the Rubiks Cube.
+ * @param {CubeState} cubeState - The state of the Rubiks Cube represented as an array of vectors.
  * @param {Vertex} layer - The 3D coordinates representing the layer in the format [x, y, z].
  * @returns {number[]} An array of indices representing the vertices within the specified layer.
- * @remarks This function takes the state of the Rubik's Cube and the 3D coordinates of a layer as input.
+ * @remarks This function takes the state of the Rubiks Cube and the 3D coordinates of a layer as input.
  * It finds and returns an array of indices corresponding to the vertices that lie within the specified layer.
  * The layer's primary unit is determined using the `primaryUnit` function.
  * The function filters the cubeState array based on the matching primary unit's coordinate value and layer coordinate value.

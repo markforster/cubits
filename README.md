@@ -1,15 +1,15 @@
-# Rubik's Cube TypeScript Library
+# Rubiks Cube TypeScript Library
 
 ![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/markforster/c101d6d2eb46daca41a0d4139367c468/raw/test.json)
  [![Tests](https://github.com/markforster/cubits/actions/workflows/tests.yml/badge.svg)](https://github.com/markforster/cubits/actions/workflows/tests.yml)
 
-This TypeScript library provides a representation of a Rubik's Cube and a set of functionalities to interact with it. The library is designed to be flexible and easily integrated into your projects. Below is a guide on how to work with the `ICube` interface and interact with a Rubik's Cube instance.
+This TypeScript library provides a representation of a Rubiks Cube and a set of functionalities to interact with it. The library is designed to be flexible and easily integrated into your projects. Below is a guide on how to work with the `ICube` interface and interact with a Rubiks Cube instance.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Initializing a Rubik's Cube](#initializing-a-rubiks-cube)
+  - [Initializing a Rubiks Cube](#initializing-a-rubiks-cube)
   - [Checking the Cube's State](#checking-the-cubes-state)
   - [Rotating a Cube Layer](#rotating-a-cube-layer)
   - [Rotating the Cube](#rotating-the-cube)
@@ -26,7 +26,7 @@ npm install @markforster/cubits
 
 ## Usage
 
-### Initializing a Rubik's Cube
+### Initializing a Rubiks Cube
 
 ```typescript
 import { Cube, ICube } from '@markforster/cubits';
