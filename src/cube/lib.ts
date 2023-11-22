@@ -16,7 +16,7 @@ export type Vertex = [number, number, number];
 export type Vector = [Vertex, Vertex];
 
 /**
- * Enum representing the possible directions of rotation for a Rubik's Cube layer.
+ * Enum representing the possible directions of rotation for a Rubiks Cube layer.
  *
  * @public
  */
@@ -38,7 +38,7 @@ export enum CubeRotationDirection {
 }
 
 /**
- * Enum representing the rotation angles for a Rubik's Cube layer.
+ * Enum representing the rotation angles for a Rubiks Cube layer.
  *
  * @public
  */

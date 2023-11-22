@@ -21,6 +21,7 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+coverage/**
 test-reports/**
 *.lcov
 
@@ -135,4 +136,3 @@ dist
 .npmrc
 .npmrc*
 **copy.json
-docs/

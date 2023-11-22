@@ -16,11 +16,13 @@ dist/**/*.test.d.ts
 /test-reports/**
 /examples/**
 /docs/**
+coverage/**
 .eslintignore
 .eslintrc
 .prettierignore
 .prettierrc
 .github/**
+/docs/**
 .npmrc*
 **copy.json
 CODE_OF_CONDUCT.md

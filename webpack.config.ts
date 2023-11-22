@@ -1,15 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const webpack = require('webpack');
+import * as path from 'path';
+import * as nodeExternals from 'webpack-node-externals';
+import { BannerPlugin } from 'webpack';
+import BundleDeclarationsWebpackPlugin from 'bundle-declarations-webpack-plugin';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const nodeExternals = require('webpack-node-externals');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const bdp = require('bundle-declarations-webpack-plugin');
-
-const config = {
+export default {
   mode: process.env.NODE_ENV || 'development',
   entry: './src/index.ts',
   module: {
@@ -37,8 +31,8 @@ const config = {
     __dirname: false,
   },
   plugins: [
-    new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
-    new bdp.BundleDeclarationsWebpackPlugin({
+    new BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
+    new BundleDeclarationsWebpackPlugin({
       entry: ['./src/index.ts'],
       outFile: 'index.d.ts',
     }),
@@ -48,5 +42,3 @@ const config = {
     assets: true,
   },
 };
-
-module.exports = [config];

@@ -1,6 +1,6 @@
 import {
-  rotateVectorsAtIndeces,
-  indecesForNormal,
+  rotateVectorsAtindices,
+  indicesForNormal,
   compareArray,
   AxisVertex,
 } from '..';
@@ -8,13 +8,13 @@ import { CubeState } from '../../cube';
 import { FULL_ROTATION } from '../rotation';
 import { newCubeState } from './../factory';
 
-describe('rotateVectorsAtIndeces should rotate vectors correctly', () => {
+describe('rotateVectorsAtindices should rotate vectors correctly', () => {
   it('Should have rotated the vectors around the Y axis 90 degrees', () => {
     const cubeState: CubeState = newCubeState();
 
-    rotateVectorsAtIndeces(
+    rotateVectorsAtindices(
       cubeState,
-      indecesForNormal(cubeState, [0, 2, 0]),
+      indicesForNormal(cubeState, [0, 2, 0]),
       FULL_ROTATION,
       AxisVertex.YAW,
     );
@@ -34,9 +34,9 @@ describe('rotateVectorsAtIndeces should rotate vectors correctly', () => {
   it('Should have rotated the vectors around the Z axis 90 degrees', () => {
     const cubeState: CubeState = newCubeState();
 
-    rotateVectorsAtIndeces(
+    rotateVectorsAtindices(
       cubeState,
-      indecesForNormal(cubeState, [0, 2, 0]),
+      indicesForNormal(cubeState, [0, 2, 0]),
       FULL_ROTATION,
       AxisVertex.PITCH,
     );
@@ -56,9 +56,9 @@ describe('rotateVectorsAtIndeces should rotate vectors correctly', () => {
   it('Should have rotated the vectors around the X axis 90 degrees', () => {
     const cubeState: CubeState = newCubeState();
 
-    rotateVectorsAtIndeces(
+    rotateVectorsAtindices(
       cubeState,
-      indecesForNormal(cubeState, [0, 2, 0]),
+      indicesForNormal(cubeState, [0, 2, 0]),
       FULL_ROTATION,
       AxisVertex.ROLL,
     );

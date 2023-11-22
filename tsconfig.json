@@ -10,7 +10,7 @@
       "es2015"
     ],
     "noImplicitAny": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
   "transpileOnly": false,
   "include": ["src"],

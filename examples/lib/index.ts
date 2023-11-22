@@ -56,16 +56,20 @@ export const showCubeDetails = (cube: ICube, title?: string) => {
 
 type CallbackFunction = (cube: ICube) => void;
 
-export const cubeExample = (title: string, callback: CallbackFunction) => {
+export const cubeExample = (
+  title: string,
+  callback: CallbackFunction,
+  cube?: ICube,
+) => {
   // console.clear();
-  const titleString = `Example : '${title} `;
+  const titleString = `Example : ${title} `;
 
   console.log('\n');
   console.log(clc.xterm(11)(`-`.repeat(titleString.length + 2)));
   console.log(` ${clc.xterm(13)(titleString)}`);
   console.log(clc.xterm(11)(`-`.repeat(titleString.length + 2)));
 
-  callback(new Cube());
+  callback(cube || new Cube());
 
   console.log(`${clc.xterm(11)(`-`.repeat(`Example : ${title} `.length))}`);
 };
