@@ -3,16 +3,12 @@ import { toRadians } from './toRadians';
 import { Vertex } from '../cube/lib';
 import { CubeState } from '../cube';
 
-// export type PrimaryUnit = [number, number];
 export type PrimaryUnit = [number | null, number];
 
 const PITCH = [1, 0, 0]; //  Up and Down around its lateral axis
 const YAW = [0, 1, 0]; //  Left and Right around the normal (vertical axis)
-// const ROLL   = [0, 0, 1];  //  Left and Right around longitudinal axis!!
 const ROLL = [0, 0, -1]; //  Left and Right around longitudinal axis!!
 
-// const t: any = { ASDASD: 10 };
-//Record<string, [number, number]>
 export const AxisVertex: Record<string, Vertex> = Object.freeze({
   PITCH: PITCH as Vertex,
   YAW: YAW as Vertex,
