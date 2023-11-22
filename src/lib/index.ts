@@ -53,13 +53,13 @@ export { indicesForNormal } from './indicesForNormal';
 
 // This can help us get all vectors of a cube layer
 /*
-  Goal : Get the indices of all verteces that are on the same layer
+  Goal : Get the indices of all vertices that are on the same layer
 
   1) Get the primary unit. [ 0, 1, 0 ] would be all that are in the top layer
   2) Get all vectors that share this primary unit!
   3) we should have the indices!
 */
-export { indicesForVertecesInLayer } from './indicesForVertecesInLayer';
+// export { indicesForverticesInLayer } from './indicesForverticesInLayer';
 
 export const rotateVectorsAtindices = (
   cubeState: CubeState,

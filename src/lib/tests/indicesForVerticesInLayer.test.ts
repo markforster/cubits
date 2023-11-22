@@ -4,9 +4,9 @@
 */
 
 import { newCubeState } from '../factory';
-import { indicesForVertecesInLayer, compareArray } from '..';
 import { CubeState } from '../../cube';
 import { Vertex } from '../../cube/lib';
+import { indicesForverticesInLayer } from '../indicesForVerticesInLayer';
 
 const TOP_LAYER_indices = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 18, 19, 20, 27, 28, 29, 36, 37, 38, 45, 46, 47,
@@ -19,24 +19,24 @@ const BOTTOM_LAYER_indices = [
 ];
 const BOTTOM_LAYER_VERTEX: Vertex = [0, -1, 0];
 
-describe('indicesForVertecesInLayer should return indices that match the layer vertex', () => {
+describe('indicesForverticesInLayer should return indices that match the layer vertex', () => {
   const cubeState: CubeState = newCubeState();
 
   it(`The indices for vertex [${TOP_LAYER_VERTEX}] (Top Layer) should match the Top indices`, () => {
-    const indices: number[] = indicesForVertecesInLayer(
+    const indices: number[] = indicesForverticesInLayer(
       cubeState,
       TOP_LAYER_VERTEX,
     );
 
-    expect(compareArray(indices, TOP_LAYER_indices)).toBe(true);
+    expect(indices).toEqual(TOP_LAYER_indices);
   });
 
   it(`The indices for vertex [${BOTTOM_LAYER_VERTEX}] (Bottom Layer) should match the Bottom indices`, () => {
-    const indices: number[] = indicesForVertecesInLayer(
+    const indices: number[] = indicesForverticesInLayer(
       cubeState,
       BOTTOM_LAYER_VERTEX,
     );
 
-    expect(compareArray(indices, BOTTOM_LAYER_indices)).toBe(true);
+    expect(indices).toEqual(BOTTOM_LAYER_indices);
   });
 });

@@ -1,7 +1,7 @@
 import { CubeState } from '../cube';
 import { Vertex, RotationAngle } from '../cube/lib';
 import { rotateVectorsAtindices } from '.';
-import { indicesForVertecesInLayer } from './indicesForVertecesInLayer';
+import { indicesForverticesInLayer } from './indicesForVerticesInLayer';
 
 export const rotateLayerForVertex = (
   cubeState: CubeState,
@@ -9,6 +9,6 @@ export const rotateLayerForVertex = (
   rotationAxis: Vertex,
   angle: RotationAngle,
 ) => {
-  const indices: number[] = indicesForVertecesInLayer(cubeState, vertex);
+  const indices: number[] = indicesForverticesInLayer(cubeState, vertex);
   rotateVectorsAtindices(cubeState, indices, angle, rotationAxis);
 };
