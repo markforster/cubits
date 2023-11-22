@@ -2,7 +2,7 @@ import { CubeState } from '../../cube';
 import { areAllValuesSame } from '../array/areAllValuesSame';
 import { colourForIndex } from '../colourForIndex';
 import { COLOURS } from '../colours';
-import { indecesForNormal } from '../indecesForNormal';
+import { indicesForNormal } from '../indicesForNormal';
 import { layerNormalForColour } from '../layerVertexForColour';
 
 export const solved = (cubeState: CubeState, colour?: COLOURS): boolean => {
@@ -21,9 +21,9 @@ export const solved = (cubeState: CubeState, colour?: COLOURS): boolean => {
       .map((c: COLOURS) => {
         const lnfc = layerNormalForColour(cubeState, c);
 
-        const indeces: any[] = indecesForNormal(cubeState, lnfc);
+        const indices: any[] = indicesForNormal(cubeState, lnfc);
 
-        const colours: any[] = indeces.map((i: number) => {
+        const colours: any[] = indices.map((i: number) => {
           return colourForIndex(i);
         });
 

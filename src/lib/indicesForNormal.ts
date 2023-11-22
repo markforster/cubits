@@ -10,7 +10,7 @@ import { primaryUnit } from './primaryUnit';
  * @param vector - The normal vector (Vertex) to be matched.
  * @returns An array of indices (numbers) of cube faces that have the same normal vector.
  */
-export const indecesForNormal = (
+export const indicesForNormal = (
   cubeState: CubeState,
   vector: Vertex,
 ): number[] => {

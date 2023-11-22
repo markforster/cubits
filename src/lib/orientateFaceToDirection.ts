@@ -1,4 +1,4 @@
-import { AxisVertex, rotateVectorsAtIndeces } from '.';
+import { AxisVertex, rotateVectorsAtindices } from '.';
 import { CubeState } from '../cube';
 import { Vertex } from '../cube/lib';
 import { angleBetweenVectors } from './angleBetweenVectors';
@@ -102,7 +102,7 @@ export const orientateFaceToDirection = (
 
   console.log('topAngle1', topAngle1)
   console.log('axis', axis)
-  rotateVectorsAtIndeces(
+  rotateVectorsAtindices(
     cubestate,
     cubestate.map((_v: any, i: number) => i),
     topAngle1,
