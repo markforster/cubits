@@ -1,6 +1,6 @@
 {
   "name": "@markforster/cubits",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "3x3 rubiks cube module with methods to rotate sides by colour and check if solved",
   "main": "./dist/index.js",
   "scripts": {
