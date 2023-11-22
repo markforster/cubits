@@ -12,8 +12,6 @@ import { Vertex } from './lib';
 export class Face implements IFace {
   private _option: FaceOption;
   private _cubeState: CubeState;
-  // private _colour: COLOURS;
-  // private _normal: Vertex;
 
   public get option(): FaceOption {
     return this._option;
