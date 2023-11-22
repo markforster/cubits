@@ -1,5 +1,7 @@
 import { CubeState } from '.';
 import { COLOURS } from '../lib/colours';
+import { FaceOption } from '../lib/face';
+import { IFace } from './IFace';
 import { Vertex, CubeRotationDirection } from './lib';
 
 /**
@@ -21,6 +23,7 @@ export interface ICubePuzzle {
    * @returns `true` if the Rubik's Cube is solved, `false` otherwise.
    */
   solved(colour?: COLOURS): boolean;
+  face(option: FaceOption): IFace;
 }
 
 /**
