@@ -5,24 +5,6 @@ import { newCubeState } from '../factory';
 import { orientateFaceToDirection } from '../orientateFaceToDirection';
 import { expectColourToHaveNormal } from './lib';
 
-const V_BACK: Vertex = [0, 0, 2];
-const V_FRONT: Vertex = [0, 0, -2];
-const V_LEFT: Vertex = [-2, 0, 0];
-const V_RIGHT: Vertex = [2, 0, 0];
-const V_TOP: Vertex = [0, 2, 0];
-const V_BOTTOM: Vertex = [0, -2, 0];
-// const ALL_AXIS: [Vertex, Vertex, Vertex] = [
-//   AxisVertex.ROLL,
-//   AxisVertex.YAW,
-//   AxisVertex.PITCH,
-// ];
-// const ALL_AXIS: [Vertex, Vertex, Vertex] = [
-//   AxisVertex.ROLL,
-//   AxisVertex.PITCH,
-//   AxisVertex.YAW,
-// ];
-// [AxisVertex.ROLL, AxisVertex.PITCH, AxisVertex.YAW]
-
 describe('Orienting the faces of a Cube from an initial orientation given a new orientation for the Top faces', () => {
   let cubeState: CubeState;
 

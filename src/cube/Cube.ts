@@ -24,19 +24,25 @@ export class Cube implements ICube {
   }
 
   orientate(orientation: Orientation) {
-    orientateFaceToDirection(
-      this.state,
-      orientation.top,
-      [0, 2, 0],
-      // [AxisVertex.ROLL, AxisVertex.YAW, AxisVertex.PITCH],
-    );
+    console.log('orientation', orientation);
+    // Start by moving one face while constraining another!!
+    // Dont deal with colours!!! Deal with faces: Top, BOttom etc!
+    // Start by
+    // Do the one that needs to go to the top first!
+    // orientateFaceToDirection(
+    //   this.state,
+    //   orientation.top,
+    //   [0, 2, 0],
+    //   // [AxisVertex.ROLL, AxisVertex.YAW, AxisVertex.PITCH],
+    // );
 
-    orientateFaceToDirection(
-      this.state,
-      orientation.left,
-      [-2, 0, 0],
-      // [AxisVertex.YAW, AxisVertex.YAW, AxisVertex.YAW],
-    );
+    // // Then do the next as in theory it should ALWAYS be a yaw
+    // orientateFaceToDirection(
+    //   this.state,
+    //   orientation.left,
+    //   [-2, 0, 0],
+    //   // [AxisVertex.YAW, AxisVertex.YAW, AxisVertex.YAW],
+    // );
   }
 
   rotate(axis: Vertex, direction: CubeRotationDirection) {

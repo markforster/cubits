@@ -25,6 +25,8 @@ coverage/**
 test-reports/**
 *.lcov
 
+src/scratch/**
+
 # nyc test coverage
 .nyc_output
 

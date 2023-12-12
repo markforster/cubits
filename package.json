@@ -5,6 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "./bin/build.sh",
+    "examples":"npm --prefix ./examples/ run example",
     "test": "jest --passWithNoTests --roots ./src --silent --coverage --coverageDirectory test-reports"
   },
   "author": "markforster",
