@@ -56,30 +56,11 @@ export enum RotationAngle {
   AntiClockWise = -FULL_ROTATION,
 }
 
-type ValidOrientation =
-  | { left: COLOURS.WHITE; top: COLOURS.BLUE }
-  | { left: COLOURS.WHITE; top: COLOURS.RED }
-  | { left: COLOURS.WHITE; top: COLOURS.GREEN }
-  | { left: COLOURS.WHITE; top: COLOURS.ORANGE }
-  | { left: COLOURS.BLUE; top: COLOURS.WHITE }
-  | { left: COLOURS.BLUE; top: COLOURS.RED }
-  | { left: COLOURS.BLUE; top: COLOURS.YELLOW }
-  | { left: COLOURS.BLUE; top: COLOURS.ORANGE }
-  | { left: COLOURS.GREEN; top: COLOURS.WHITE }
-  | { left: COLOURS.GREEN; top: COLOURS.RED }
-  | { left: COLOURS.GREEN; top: COLOURS.YELLOW }
-  | { left: COLOURS.GREEN; top: COLOURS.ORANGE }
-  | { left: COLOURS.RED; top: COLOURS.WHITE }
-  | { left: COLOURS.RED; top: COLOURS.GREEN }
-  | { left: COLOURS.RED; top: COLOURS.BLUE }
-  | { left: COLOURS.RED; top: COLOURS.YELLOW }
-  | { left: COLOURS.YELLOW; top: COLOURS.GREEN }
-  | { left: COLOURS.YELLOW; top: COLOURS.BLUE }
-  | { left: COLOURS.YELLOW; top: COLOURS.RED }
-  | { left: COLOURS.YELLOW; top: COLOURS.ORANGE }
-  | { left: COLOURS.ORANGE; top: COLOURS.WHITE }
-  | { left: COLOURS.ORANGE; top: COLOURS.GREEN }
-  | { left: COLOURS.ORANGE; top: COLOURS.BLUE }
-  | { left: COLOURS.ORANGE; top: COLOURS.YELLOW };
-
-export type Orientation = ValidOrientation;
+export enum Orientation {
+  TOP = 'TOP',
+  BOTTOM = 'BOTTOM',
+  FRONT = 'FRONT',
+  BACK = 'BACK',
+  LEFT = 'LEFT',
+  RIGHT = 'RIGHT',
+}

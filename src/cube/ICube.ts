@@ -36,7 +36,29 @@ export interface ICubeMechanics {
    * Orients the Rubiks Cube according to a specific algorithm or method.
    * This method is optional and may not be implemented by all cube implementations.
    */
-  orientate(orientation: Orientation): void;
+  /*
+    !!! new idea
+    - instead of having a method to orientate to left / top / right etc..
+      have a single method that just proxied the request to 'rotateCubeState'
+
+      then assume the action of rotating the cube is performed by a controller who will
+      coordinate the 2 actions need to orientate a cube
+
+      ! Need to think about ?? the language used to describe RC actions and how to 
+      extend it to incorporate orientation
+
+      for example:
+        FL - move Front to Left
+        FLTF - move front to left then top to front.. since L was part of front left, use L as a locked axis!!
+   */
+
+  // orientate(orientation: Orientation): void;
+  // orientate(sourceAxis: Vertex, targetAxis: Vertex, lockedAxis: Vertex): void;
+  orientate(
+    sourceOrientation: Orientation,
+    targetOrientation: Orientation,
+    lockedOrientation?: Orientation,
+  ): void;
 
   /**
    * Rotates the Rubiks Cube along a specified axis and direction.
