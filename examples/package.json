@@ -5,19 +5,24 @@
   "main": "index.js",
   "scripts": {
     "start": "npm i && ts-node ./sandbox.ts",
+    "example": "ts-node ./lib/run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "markforster",
   "license": "MIT",
   "dependencies": {
     "cli-color": "^2.0.3",
+    "cli-select": "^1.1.2",
     "cli-table3": "^0.6.3",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
     "i": "^0.3.7",
     "npm": "^10.2.3",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@types/cli-color": "^2.0.5",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.4.5"
   }
 }

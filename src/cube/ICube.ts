@@ -2,7 +2,7 @@ import { CubeState } from '.';
 import { COLOURS } from '../lib/colours';
 import { FaceOption } from '../lib/face';
 import { IFace } from './IFace';
-import { Vertex, CubeRotationDirection } from './lib';
+import { Vertex, CubeRotationDirection, Orientation } from './lib';
 
 /**
  * Represents the state of a Rubiks Cube puzzle.
@@ -36,7 +36,11 @@ export interface ICubeMechanics {
    * Orients the Rubiks Cube according to a specific algorithm or method.
    * This method is optional and may not be implemented by all cube implementations.
    */
-  orientate?(): void;
+  orientate(
+    sourceOrientation: Orientation,
+    targetOrientation: Orientation,
+    lockedOrientation?: Orientation,
+  ): void;
 
   /**
    * Rotates the Rubiks Cube along a specified axis and direction.

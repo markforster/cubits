@@ -1,3 +1,4 @@
+import { COLOURS } from '../lib/colours';
 import { FULL_ROTATION } from '../lib/rotation';
 
 /**
@@ -53,4 +54,13 @@ export enum RotationAngle {
    * in the opposite direction (-360 degrees).
    */
   AntiClockWise = -FULL_ROTATION,
+}
+
+export enum Orientation {
+  TOP = 'TOP',
+  BOTTOM = 'BOTTOM',
+  FRONT = 'FRONT',
+  BACK = 'BACK',
+  LEFT = 'LEFT',
+  RIGHT = 'RIGHT',
 }

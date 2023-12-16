@@ -8,11 +8,13 @@ export type PrimaryUnit = [number | null, number];
 const PITCH = [1, 0, 0]; //  Up and Down around its lateral axis
 const YAW = [0, 1, 0]; //  Left and Right around the normal (vertical axis)
 const ROLL = [0, 0, -1]; //  Left and Right around longitudinal axis!!
+const ALL = [1, 1, -1]; //  Left and Right around longitudinal axis!!
 
 export const AxisVertex: Record<string, Vertex> = Object.freeze({
   PITCH: PITCH as Vertex,
   YAW: YAW as Vertex,
   ROLL: ROLL as Vertex,
+  ALL: ALL as Vertex,
 } as const);
 
 export const LayersVertex: Record<string, Vertex> = Object.freeze({
