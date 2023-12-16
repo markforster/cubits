@@ -10,12 +10,12 @@ Out of interest you can find an insightful technical specification for the rubik
 ## Table of Contents
 
 - [Installation](#installation)
-- [Terminology](#terminology)
 - [Usage](#usage)
   - [Initializing a Rubiks Cube](#initializing-a-rubiks-cube)
   - [Checking the Cube's Solved State](#checking-the-cubes-solved-state)
   - [Rotating a Cube Layer](#rotating-a-cube-layer)
   - [Rotating the Cube](#rotating-the-cube)
+  - [Orientating the Cube](#orientating-the-cube)  
   - [Deriving colour, indices, orientation and normal information from the cubestate](#deriving-colour-indices-orientation-and-normal-information-from-the-cubestate)
 - [Examples](#examples)
 - [Contributing](#contributing)
@@ -56,6 +56,8 @@ console.log(`Solved for ALL:`, cube.solved());
 
 #### Rotating a Cube Layer
 
+Rotate a single layer of the cube.
+
 ```typescript
 import { CubeRotationDirection, ICube, COLOURS } from '@markforster/cubits';
 
@@ -67,11 +69,26 @@ cube.rotateLayerForColour(COLOURS.BLUE, CubeRotationDirection.AntiClockWise);
 
 #### Rotating the Cube
 
+Rotate the cube as a whole.
+
 ```typescript
 import { Cube, ICube, AxisVertex, CubeRotationDirection } from "@markforster/cubits"
 
 const cube: ICube = new Cube();
 cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
+```
+
+#### Orientating the Cube
+
+Orientates the face of one cube to the position of another. Optionally a locked face can be provided that will be locked to ensure the orientation does not disturb it when orientating the source face to the target face. The example below will move the top face to the left then the back face to the front locking the now left face ensuring it is not disturbed. This allows us to orientate the cube should we wish to run algorithms against it.
+
+
+```typescript
+import { Cube, ICube, AxisVertex, CubeRotationDirection } from "@markforster/cubits"
+
+const cube: ICube = new Cube();
+cube.orientate(Orientation.TOP, Orientation.LEFT);
+cube.orientate(Orientation.BACK, Orientation.FRONT, Orientation.LEFT);
 ```
 
 #### Deriving colour, indices, orientation and normal information from the cubestate
