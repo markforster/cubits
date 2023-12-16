@@ -26,30 +26,14 @@ export const determinRotationAxis = (
   const mask3: number = maskVerticesToBitArray(v3);
 
   if (((mask1 | mask2) ^ 0b111) !== mask3) {
-    // Could it be that the source and target are the same??
-    // console.log(`mask1 === mask2`, mask1 === mask2);
     if (mask1 === mask2) {
-      // console.log(
-      //   `Move from one side to the other ${sourceAxis} > ${targetAxis}`,
-      // );
-      // console.log('lockedAxis', lockedAxis)
-      // console.log(
-      //   'BOTH THE SAME',
-      //   'We should rotate around ',
-      //   binaryToArray(mask3),
-      // );
       if (compareArray(v1, preferredAxisLock)) return preferredTopAxis;
       return binaryToArray(mask3) as Vertex;
     } else if (lockedAxis !== undefined) {
-      // console.log(
-      //   `ERROR!!! Can't rotate ${sourceAxis} to ${targetAxis} while locking ${lockedAxis}`,
-      // );
-      throw new Error(`Not possible to rotate ${sourceAxis} to ${targetAxis} while locking ${lockedAxis}`);
+      throw new Error(
+        `Not possible to rotate ${sourceAxis} to ${targetAxis} while locking ${lockedAxis}`,
+      );
     } else {
-      // console.log(
-      //   `We Can't lock the front face as its either source of target!.. we'll need to choose the 1 remaining axis!`,
-      // );
-
       const rem = (mask1 | mask2) ^ 0b111;
 
       return binaryToArray(rem) as Vertex;
