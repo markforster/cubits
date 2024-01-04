@@ -3,7 +3,6 @@ import { FaceOption } from '../../lib/face';
 import { faceForFaceOption } from '../../lib/face/faceForFaceOption';
 import * as lib from '../../lib/face/tests/faceForFaceOption.lib';
 import { newCubeState } from '../../lib/factory';
-import { IFace } from '../IFace';
 
 describe('Face should provide the IFace interace', () => {
   const cubeState: CubeState = newCubeState();

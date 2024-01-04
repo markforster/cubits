@@ -10,7 +10,7 @@ import { CubeRotationDirection } from '../src/cube/lib';
 import { faceOptionForColour } from '../src/lib/face/faceOptionForColour';
 import { faceOptionForOrientation } from '../src/lib/face/faceOptionForOrientation';
 import { FaceOption } from '../src/lib/face';
-import { AxisVertex } from '../src/lib';
+import { Axis } from '../src/lib/rotate';
 
 console.log(FaceOption[faceOptionForColour(COLOURS.BLUE)]);
 console.log(FaceOption[faceOptionForOrientation(ORIENTATIONS.BACK)]);
@@ -36,7 +36,7 @@ console.log('IFace > FaceOption.TOP', normalFace.colours);
 renderColours(colourFace.colours, 'colourFace.colours');
 renderColours(normalFace.colours, 'normalFace.colours');
 
-cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
+cube.rotate(Axis.X, CubeRotationDirection.ClockWise);
 
 cube.rotateLayerForColour(COLOURS.BLUE, CubeRotationDirection.ClockWise);
 

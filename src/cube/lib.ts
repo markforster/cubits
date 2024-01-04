@@ -1,4 +1,3 @@
-import { COLOURS } from '../lib/colours';
 import { FULL_ROTATION } from '../lib/rotation';
 
 /**
@@ -6,7 +5,13 @@ import { FULL_ROTATION } from '../lib/rotation';
  *
  * @public
  */
-export type Vertex = [number, number, number];
+export type Vertex = [
+  number | undefined,
+  number | undefined,
+  number | undefined,
+];
+
+// export type Vertex = [number, number, number];
 
 /**
  * Type representing a 3D vector as an array of two vertices, denoting a direction

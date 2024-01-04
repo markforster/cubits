@@ -1,8 +1,10 @@
 import { CubeState } from '.';
 import { COLOURS } from '../lib/colours';
 import { FaceOption } from '../lib/face';
+import { LAYERS } from '../lib/layers';
+import { Axis } from '../lib/rotate';
 import { IFace } from './IFace';
-import { Vertex, CubeRotationDirection, Orientation } from './lib';
+import { CubeRotationDirection, Orientation } from './lib';
 
 /**
  * Represents the state of a Rubiks Cube puzzle.
@@ -48,7 +50,8 @@ export interface ICubeMechanics {
    * @param axis - The axis of rotation (e.g., 'X', 'Y', 'Z').
    * @param direction - The direction of rotation (e.g., 'clockwise', 'counterclockwise').
    */
-  rotate(axis: Vertex, direction: CubeRotationDirection): void;
+  // rotate(axis: Vertex, direction: CubeRotationDirection): void;
+  rotate(axis: Axis, direction: CubeRotationDirection, times?: number): void;
 
   /**
    * Rotates a layer of the Rubiks Cube for a specified color along a specified direction.
@@ -57,6 +60,18 @@ export interface ICubeMechanics {
    * @param direction - The direction of rotation (e.g., 'clockwise', 'counterclockwise').
    */
   rotateLayerForColour(colour: COLOURS, direction: CubeRotationDirection): void;
+
+  /**
+   * Rotates a specific layer of the Rubik's Cube along the specified direction.
+   *
+   * @param layer - The layer of the Rubik's Cube to rotate (e.g., 'TOP', 'MIDDLE', 'BOTTOM' for LAYERS).
+   * @param direction - The direction of rotation (e.g., 'clockwise', 'counterclockwise').
+   */
+  rotateLayer(
+    layer: LAYERS,
+    direction: CubeRotationDirection,
+    times?: number,
+  ): void;
 }
 
 /**
