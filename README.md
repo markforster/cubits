@@ -17,6 +17,7 @@ Out of interest you can find an insightful technical specification for the rubik
   - [Rotating the Cube](#rotating-the-cube)
   - [Orientating the Cube](#orientating-the-cube)  
   - [Deriving colour, indices, orientation and normal information from the cubestate](#deriving-colour-indices-orientation-and-normal-information-from-the-cubestate)
+  - [Cube Notation Operator](#cube-notation-operator)
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
@@ -136,6 +137,39 @@ renderColours(normalFace.colours, 'normalFace.colours');
 console.log('colourFace.normals', colourFace.normals);
 ```
 
+#### Cube Notation Operator
+A cube operator is capable of translating cube notation and performing operations on a cube.
+
+The operator can parse and tokenise all [standard cube notation](https://ruwix.com/the-rubiks-cube/notation/). and includes a super set that can be used for orientating the cube. Super set notation follows the format of: 
+
+*face in lowercase* : *target face in uppercase*
+
+for example: 'lU' moves the left face to the Up face orientation, 'bR' moves the back face to the Right face orientation. 
+
+Chaining superset notation allows the cube to be orientated to 2 faces. When executing superset notation the current turn will evaluate the last turn to determine wether it was an orientation token and ensure that the current turn does not disturb the last orientation target face.
+
+``` typescript
+const cubeState: CubeState = newCubeState();
+
+const cube: ICube = new Cube(cubeState);
+const operator: IOperator = new Operator();
+operator.cube = cube;
+
+// const notation = `fUuLRRUR'XXZ`;
+const notation = `XXYX'ULLUL2R'B2E2M'ZS'2`;
+
+cubeExample(
+  `Executing cube notation "${notation}"`,
+  (cube: ICube) => {
+    showCubeDetails(cube, 'Starting Cube');
+
+    operator.execute(notation);
+
+    showCubeDetails(cube, 'Cube after performing notation');
+  },
+  cube,
+);
+```
 ## Examples
 
 Check the [examples](./examples) directory for additional usage scenarios and demonstrations.
