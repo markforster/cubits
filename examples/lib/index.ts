@@ -6,6 +6,7 @@ import { render } from './../render';
 // eslint-disable-next-line no-var, @typescript-eslint/no-var-requires
 var Table = require('cli-table3');
 import * as clc from 'cli-color';
+import { ValuesForEnum, KeysForEnum } from '../../src/lib/enums';
 
 export const consoleColors: any = {
   [COLOURS.WHITE]: 255,
@@ -18,19 +19,6 @@ export const consoleColors: any = {
 
 export const StringIsNumber = (value: any) => isNaN(Number(value)) === false;
 export const NotStringIsNumber = (value: any) => isNaN(Number(value)) === true;
-
-// Turn enum into array
-export function KeysForEnum(_enum: any): any[] {
-  return Object.keys(_enum)
-    .filter(StringIsNumber)
-    .map((key) => _enum[key]);
-}
-
-export function ValuesForEnum(_enum: any): any[] {
-  return Object.keys(_enum)
-    .filter(NotStringIsNumber)
-    .map((key) => _enum[key]);
-}
 
 export const showCubeDetails = (cube: ICube, title?: string) => {
   title && console.log(`> ${title}`);

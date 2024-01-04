@@ -23,6 +23,7 @@ import { primaryUnit } from './primaryUnit';
  * const indices = indicesForverticesInLayer(cubeState, layer);
  * console.log(indices); // Output: [0, 2]
  */
+// TODO: This is no longer needed and has been superceded by indicesForvertices
 export const indicesForverticesInLayer = (
   cubeState: CubeState,
   layer: Vertex,

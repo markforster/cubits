@@ -4,16 +4,7 @@ import { RotationAngle } from '../../cube/lib';
 import { COLOURS } from '../colours';
 import { rotateLayerForColour } from '../rotateLayerForColour';
 import { newCubeState } from './../factory';
-
-const expectDefaultCubeState = (cubeState: CubeState) => {
-  const tmpCubeState: CubeState = newCubeState();
-
-  tmpCubeState.forEach((_cs: any, index: number) => {
-    expect(compareArray(cubeState[index][0], tmpCubeState[index][0])).toBe(
-      true,
-    );
-  });
-};
+import { expectDefaultCubeState } from './lib';
 
 describe('rotateLayerForColour should rotate layers by a specified colour', () => {
   it('When rotating White later layers Blue, Green, Red and Orange should rotate but Yellow should not change', () => {

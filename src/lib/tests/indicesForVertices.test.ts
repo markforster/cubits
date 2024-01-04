@@ -6,9 +6,12 @@
 import { newCubeState } from '../factory';
 import { CubeState } from '../../cube';
 import { Vertex } from '../../cube/lib';
-import { indicesForverticesInLayer } from '../indicesForVerticesInLayer';
+import { indicesForvertices } from '../indicesForvertices';
+import { Layer } from '../rotate';
+import { VertexForLayer } from '../layers';
 
 // TODO: Should test using indicesForvertices!!! deprecated
+// TODO: Need to test middle layers!!!
 const TOP_LAYER_indices = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 18, 19, 20, 27, 28, 29, 36, 37, 38, 45, 46, 47,
 ];
@@ -24,18 +27,18 @@ describe('indicesForverticesInLayer should return indices that match the layer v
   const cubeState: CubeState = newCubeState();
 
   it(`The indices for vertex [${TOP_LAYER_VERTEX}] (Top Layer) should match the Top indices`, () => {
-    const indices: number[] = indicesForverticesInLayer(
+    const indices: number[] = indicesForvertices(
       cubeState,
-      TOP_LAYER_VERTEX,
+      VertexForLayer[Layer.TOP],
     );
 
     expect(indices).toEqual(TOP_LAYER_indices);
   });
 
   it(`The indices for vertex [${BOTTOM_LAYER_VERTEX}] (Bottom Layer) should match the Bottom indices`, () => {
-    const indices: number[] = indicesForverticesInLayer(
+    const indices: number[] = indicesForvertices(
       cubeState,
-      BOTTOM_LAYER_VERTEX,
+      VertexForLayer[Layer.BOTTOM],
     );
 
     expect(indices).toEqual(BOTTOM_LAYER_indices);
