@@ -35,12 +35,5 @@ export function action(cube: ICube, turn: Turn, lastTurn?: Turn) {
   const [sourceFaceL, targetAxisL] = orientationsForToken(lastTurn?.token);
   const [sourceFace, targetAxis] = orientationsForToken(turn.token);
 
-  console.log(
-    'Orientation: ',
-    turn,
-    `<source ${sourceFace} : ${LayersVertex[sourceFace]}/>, <targetAxis ${targetAxis} ${LayersVertex[targetAxis]}/>`,
-    `LAST TARGET!! ${LayersVertex[targetAxisL]}`,
-  );
-
   cube.orientate(sourceFace, targetAxis, targetAxisL);
 }

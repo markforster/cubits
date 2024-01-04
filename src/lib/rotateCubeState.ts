@@ -19,19 +19,6 @@ export const rotateCubeState = (
     lockedAxis,
   );
 
-  // const sourceAxisKey = Object.keys(LayersVertex).find((f) =>
-  //   compareArray(sourceAxis, LayersVertex[f]),
-  // );
-  // const targetAxisKey = Object.keys(LayersVertex).find((f) =>
-  //   compareArray(targetAxis, LayersVertex[f]),
-  // );
-
-  // console.log(
-  //   `Moving ${sourceAxisKey} to ${targetAxisKey}`,
-  //   sourceAxis,
-  //   targetAxis,
-  // );
-
   const cross_P: Vertex = crossProduct(sourceAxis, targetAxis);
 
   const finalAngle: any = cross_P

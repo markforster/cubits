@@ -93,7 +93,6 @@ describe('Face should provide the IFace interace', () => {
   });
 
   it('Should return the correct positions for a top face', () => {
-    // console.log('positions', face.positions);
     expect(faceForFaceOption(cubeState, FaceOption.TOP).positions).toEqual(
       lib.POSITIONS_FOR_WHITE,
     );
@@ -125,7 +124,6 @@ describe('Face should provide the IFace interace', () => {
   });
 
   it('Should return the correct positions for a top face', () => {
-    // console.log('positions', face.positions);
     expect(faceForFaceOption(cubeState, FaceOption.WHITE).positions).toEqual(
       lib.POSITIONS_FOR_WHITE,
     );
