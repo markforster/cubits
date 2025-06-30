@@ -1,7 +1,7 @@
 import { CubeState } from '..';
 import { AxisVertex, COLOURS, Cube, CubeRotationDirection, FaceOption, ICube, IFace, Vertex } from '../..';
 import { cG, cO, cR, cW, cY } from '../../lib/colours';
-import { coloursForVertices } from '../../lib/coloursForVeritces';
+import { coloursForVertices } from '../../lib/coloursForVertices';
 import { ALL_WHITE_COLOURS, ALL_YELLOW_COLOURS } from '../../lib/face/tests/faceForFaceOption.lib';
 import { newCubeState } from '../../lib/factory';
 import { Axis, Layer } from '../../lib/rotate';

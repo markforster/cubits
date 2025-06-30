@@ -1,7 +1,7 @@
 import { CubeState } from '../..';
 import { CubeRotationDirection, Vertex } from '../../cube/lib';
 import { cB, cG, cO, cR, cW, cY } from '../colours';
-import { coloursForVertices } from '../coloursForVeritces';
+import { coloursForVertices } from '../coloursForVertices';
 import {
   ALL_BLUE_COLOURS,
   ALL_GREEN_COLOURS,

@@ -1,6 +1,6 @@
 import { Cube, CubeState, FaceOption, ICube, IFace, Vertex, newCubeState } from '../..';
 import { cW } from '../colours';
-import { coloursForVertices } from '../coloursForVeritces';
+import { coloursForVertices } from '../coloursForVertices';
 import { ALL_WHITE_COLOURS } from '../face/tests/faceForFaceOption.lib';
 
 describe('Testing colours for vertices', () => {
