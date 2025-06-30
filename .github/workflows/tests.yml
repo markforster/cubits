@@ -34,16 +34,16 @@ jobs:
         SUMMARY="$(npx jest --coverage --coverageReporters='text-summary' | tail -2 | head -1)"
         TOKENS=($SUMMARY)
         echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-    - name: Create Awesome Badge
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ secrets.GIST_SECRET }}
-        gistID: c101d6d2eb46daca41a0d4139367c468
-        filename: test.json # Use test.svg if you want to use the SVG mode.
-        label: Test Coverage
-        message: ${{ env.COVERAGE }}
-        forceUpdate: true
-        minColorRange: 0
-        maxColorRange: 100
-        valColorRange: ${{ env.COVERAGE }}
-        color: orange
+    # - name: Create Awesome Badge
+    #   uses: schneegans/dynamic-badges-action@v1.7.0
+    #   with:
+    #     auth: ${{ secrets.GIST_SECRET }}
+    #     gistID: c101d6d2eb46daca41a0d4139367c468
+    #     filename: test.json # Use test.svg if you want to use the SVG mode.
+    #     label: Test Coverage
+    #     message: ${{ env.COVERAGE }}
+    #     forceUpdate: true
+    #     minColorRange: 0
+    #     maxColorRange: 100
+    #     valColorRange: ${{ env.COVERAGE }}
+    #     color: orange
