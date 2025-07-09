@@ -1,4 +1,4 @@
-import { compareArray } from "..";
+import { arrayEquals } from "..";
 import { CubeState } from "../../cube";
 import { RotationAngle, Vertex } from "../../cube/lib";
 import { AxisVertex } from "..";
@@ -19,8 +19,8 @@ describe("rotateLayerForVertex", () => {
       RotationAngle.ClockWise,
     );
 
-    expect(compareArray(cubeState[0][0], [-1, 1, 1])).toBe(true);
-    expect(compareArray(cubeState[1][0], [-1, 1, 0])).toBe(true);
-    expect(compareArray(cubeState[2][0], [-1, 1, -1])).toBe(true);
+    expect(arrayEquals(cubeState[0][0], [-1, 1, 1])).toBe(true);
+    expect(arrayEquals(cubeState[1][0], [-1, 1, 0])).toBe(true);
+    expect(arrayEquals(cubeState[2][0], [-1, 1, -1])).toBe(true);
   });
 });

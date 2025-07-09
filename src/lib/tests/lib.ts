@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import { compareArray, indicesForNormal } from '..';
+import { arrayEquals, indicesForNormal } from '..';
 import { newCubeState } from '../..';
 import { CubeState } from '../../cube';
 import { Vertex } from '../../cube/lib';
@@ -11,7 +11,7 @@ export const expectDefaultCubeState = (cubeState: CubeState) => {
   const tmpCubeState: CubeState = newCubeState();
 
   tmpCubeState.forEach((_cs: any, index: number) => {
-    expect(compareArray(cubeState[index][0], tmpCubeState[index][0])).toBe(
+    expect(arrayEquals(cubeState[index][0], tmpCubeState[index][0])).toBe(
       true,
     );
   });
