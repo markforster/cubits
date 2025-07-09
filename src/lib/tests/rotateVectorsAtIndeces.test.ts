@@ -19,7 +19,6 @@ describe('rotateVectorsAtindices should rotate vectors correctly', () => {
       AxisVertex.YAW,
     );
 
-    // TODO : Check normals also!!
     expect(arrayEquals(cubeState[0][0], [-1, 1, 1])).toBe(true);
     expect(arrayEquals(cubeState[1][0], [-1, 1, 0])).toBe(true);
     expect(arrayEquals(cubeState[2][0], [-1, 1, -1])).toBe(true);
@@ -29,6 +28,16 @@ describe('rotateVectorsAtindices should rotate vectors correctly', () => {
     expect(arrayEquals(cubeState[6][0], [1, 1, 1])).toBe(true);
     expect(arrayEquals(cubeState[7][0], [1, 1, 0])).toBe(true);
     expect(arrayEquals(cubeState[8][0], [1, 1, -1])).toBe(true);
+
+    expect(arrayEquals(cubeState[0][1], [-1, 2, 1])).toBe(true);
+    expect(arrayEquals(cubeState[1][1], [-1, 2, 0])).toBe(true);
+    expect(arrayEquals(cubeState[2][1], [-1, 2, -1])).toBe(true);
+    expect(arrayEquals(cubeState[3][1], [0, 2, 1])).toBe(true);
+    expect(arrayEquals(cubeState[4][1], [0, 2, 0])).toBe(true);
+    expect(arrayEquals(cubeState[5][1], [0, 2, -1])).toBe(true);
+    expect(arrayEquals(cubeState[6][1], [1, 2, 1])).toBe(true);
+    expect(arrayEquals(cubeState[7][1], [1, 2, 0])).toBe(true);
+    expect(arrayEquals(cubeState[8][1], [1, 2, -1])).toBe(true);
   });
 
   it('Should have rotated the vectors around the Z axis 90 degrees', () => {
@@ -41,7 +50,6 @@ describe('rotateVectorsAtindices should rotate vectors correctly', () => {
       AxisVertex.PITCH,
     );
 
-    // TODO : Check normals also!!
     expect(cubeState[0][0]).toEqual([-1, 1, 1]);
     expect(cubeState[1][0]).toEqual([0, 1, 1]);
     expect(cubeState[2][0]).toEqual([1, 1, 1]);
@@ -51,6 +59,16 @@ describe('rotateVectorsAtindices should rotate vectors correctly', () => {
     expect(cubeState[6][0]).toEqual([-1, -1, 1]);
     expect(cubeState[7][0]).toEqual([0, -1, 1]);
     expect(cubeState[8][0]).toEqual([1, -1, 1]);
+
+    expect(arrayEquals(cubeState[0][1], [-1, 1, 2])).toBe(true);
+    expect(arrayEquals(cubeState[1][1], [0, 1, 2])).toBe(true);
+    expect(arrayEquals(cubeState[2][1], [1, 1, 2])).toBe(true);
+    expect(arrayEquals(cubeState[3][1], [-1, 0, 2])).toBe(true);
+    expect(arrayEquals(cubeState[4][1], [0, 0, 2])).toBe(true);
+    expect(arrayEquals(cubeState[5][1], [1, 0, 2])).toBe(true);
+    expect(arrayEquals(cubeState[6][1], [-1, -1, 2])).toBe(true);
+    expect(arrayEquals(cubeState[7][1], [0, -1, 2])).toBe(true);
+    expect(arrayEquals(cubeState[8][1], [1, -1, 2])).toBe(true);
   });
 
   it('Should have rotated the vectors around the X axis 90 degrees', () => {
@@ -63,16 +81,24 @@ describe('rotateVectorsAtindices should rotate vectors correctly', () => {
       AxisVertex.ROLL,
     );
 
-    // TODO : Check normals also!!
-    // expect(arrayEquals(cubeState[0][0], [ -1,  -1,  -1])).toBe(true);
-    expect(cubeState[0][0]).toEqual([1, 1, -1]);
-    // expect(arrayEquals(cubeState[1][0], [  0,  1,  1])).toBe(true);
-    // expect(arrayEquals(cubeState[2][0], [  1,  1,  1])).toBe(true);
-    // expect(arrayEquals(cubeState[3][0], [ -1,  0,  1])).toBe(true);
-    // expect(arrayEquals(cubeState[4][0], [  0,  0,  1])).toBe(true);
-    // expect(arrayEquals(cubeState[5][0], [  1,  0,  1])).toBe(true);
-    // expect(arrayEquals(cubeState[6][0], [ -1, -1,  1])).toBe(true);
-    // expect(arrayEquals(cubeState[7][0], [  0, -1,  1])).toBe(true);
-    // expect(arrayEquals(cubeState[8][0], [  1, -1,  1])).toBe(true);
+    expect(arrayEquals(cubeState[0][0], [1, 1, -1])).toBe(true);
+    expect(arrayEquals(cubeState[1][0], [1, 0, -1])).toBe(true);
+    expect(arrayEquals(cubeState[2][0], [1, -1, -1])).toBe(true);
+    expect(arrayEquals(cubeState[3][0], [1, 1, 0])).toBe(true);
+    expect(arrayEquals(cubeState[4][0], [1, 0, 0])).toBe(true);
+    expect(arrayEquals(cubeState[5][0], [1, -1, 0])).toBe(true);
+    expect(arrayEquals(cubeState[6][0], [1, 1, 1])).toBe(true);
+    expect(arrayEquals(cubeState[7][0], [1, 0, 1])).toBe(true);
+    expect(arrayEquals(cubeState[8][0], [1, -1, 1])).toBe(true);
+
+    expect(arrayEquals(cubeState[0][1], [2, 1, -1])).toBe(true);
+    expect(arrayEquals(cubeState[1][1], [2, 0, -1])).toBe(true);
+    expect(arrayEquals(cubeState[2][1], [2, -1, -1])).toBe(true);
+    expect(arrayEquals(cubeState[3][1], [2, 1, 0])).toBe(true);
+    expect(arrayEquals(cubeState[4][1], [2, 0, 0])).toBe(true);
+    expect(arrayEquals(cubeState[5][1], [2, -1, 0])).toBe(true);
+    expect(arrayEquals(cubeState[6][1], [2, 1, 1])).toBe(true);
+    expect(arrayEquals(cubeState[7][1], [2, 0, 1])).toBe(true);
+    expect(arrayEquals(cubeState[8][1], [2, -1, 1])).toBe(true);
   });
 });
