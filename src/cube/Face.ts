@@ -1,5 +1,5 @@
 import { CubeState } from '.';
-import { NormlasVertex, indicesForNormal } from '../lib';
+import { NormalsVertex, indicesForNormal } from '../lib';
 import { colourForIndex } from '../lib/colourForIndex';
 import { COLOURS } from '../lib/colours';
 import { FaceOption, faceOrientationKeys, faceColourKeys } from '../lib/face';
@@ -31,7 +31,7 @@ export class Face implements IFace {
     if (faceOrientationKeys.includes(this._option)) {
       const ifn: number[] = indicesForNormal(
         this._cubeState,
-        Object.values(NormlasVertex)[orientationForFaceOption(this._option)],
+        Object.values(NormalsVertex)[orientationForFaceOption(this._option)],
       );
       const cfi: COLOURS[] = ifn.map((i: number) => colourForIndex(i));
       return cfi;
@@ -51,7 +51,7 @@ export class Face implements IFace {
     if (faceOrientationKeys.includes(this._option)) {
       const ifn: number[] = indicesForNormal(
         this._cubeState,
-        Object.values(NormlasVertex)[orientationForFaceOption(this._option)],
+        Object.values(NormalsVertex)[orientationForFaceOption(this._option)],
       );
 
       return ifn.map((i: number) => i);
@@ -73,7 +73,7 @@ export class Face implements IFace {
     if (faceOrientationKeys.includes(this._option)) {
       const ifn: number[] = indicesForNormal(
         this._cubeState,
-        Object.values(NormlasVertex)[orientationForFaceOption(this._option)],
+        Object.values(NormalsVertex)[orientationForFaceOption(this._option)],
       );
       return ifn.map((i: number) => {
         return this._cubeState[i][1].map((ii: number) => ii) as Vertex;
@@ -96,7 +96,7 @@ export class Face implements IFace {
     if (faceOrientationKeys.includes(this._option)) {
       const ifn: number[] = indicesForNormal(
         this._cubeState,
-        Object.values(NormlasVertex)[orientationForFaceOption(this._option)],
+        Object.values(NormalsVertex)[orientationForFaceOption(this._option)],
       );
       return ifn.map((i: number) => {
         return this._cubeState[i][0].map((ii: number) => ii) as Vertex;

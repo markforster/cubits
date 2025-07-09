@@ -27,7 +27,7 @@ export const LayersVertex: Record<string, Vertex> = Object.freeze({
   // Add more matrices as needed
 } as const);
 
-export const NormlasVertex: Record<string, Vertex> = Object.freeze({
+export const NormalsVertex: Record<string, Vertex> = Object.freeze({
   TOP: [0, 2, 0] as Vertex,
   BOTTOM: [0, -2, 0] as Vertex,
   FRONT: [0, 0, -2] as Vertex,
