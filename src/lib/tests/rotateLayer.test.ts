@@ -430,8 +430,10 @@ describe(`Rotating layers`, () => {
       rotateLayer(Layer.BACK, CubeRotationDirection.ClockWise, cubeState);
 
       expect(coloursForVertices(bI, cubeState)).toEqual(ALL_BLUE_COLOURS);
-      expect(coloursForVertices(ubI, cubeState)).toEqual([cO, cO, cO]);
-      expect(coloursForVertices(lbI, cubeState)).toEqual([cY, cY, cY]);
+      expect(coloursForVertices(ubI, cubeState)).toEqual([cR, cR, cR]);
+      // The left back column should now contain what was previously the
+      // upper back row.
+      expect(coloursForVertices(lbI, cubeState)).toEqual([cW, cW, cW]);
     });
   });
 
@@ -464,8 +466,8 @@ describe(`Rotating layers`, () => {
       rotateLayer(Layer.BACK, CubeRotationDirection.AntiClockWise, cubeState);
 
       expect(coloursForVertices(bI, cubeState)).toEqual(ALL_BLUE_COLOURS);
-      expect(coloursForVertices(ubI, cubeState)).toEqual([cR, cR, cR]);
-      // expect(coloursForVertices(lbI, cubeState)).toEqual([cY, cY, cY]);
+      expect(coloursForVertices(ubI, cubeState)).toEqual([cO, cO, cO]);
+      expect(coloursForVertices(lbI, cubeState)).toEqual([cY, cY, cY]);
     });
   });
 
