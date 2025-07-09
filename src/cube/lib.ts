@@ -50,13 +50,13 @@ export enum CubeRotationDirection {
  */
 export enum RotationAngle {
   /**
-   * Clockwise rotation angle, equivalent to a full rotation (360 degrees).
+   * Clockwise rotation angle, equivalent to a quarter turn (90 degrees).
    */
   ClockWise = FULL_ROTATION,
 
   /**
-   * Counterclockwise (anti-clockwise) rotation angle, equivalent to a full rotation
-   * in the opposite direction (-360 degrees).
+   * Counterclockwise (anti-clockwise) rotation angle, equivalent to a quarter turn
+   * (90 degrees) in the opposite direction (-90 degrees).
    */
   AntiClockWise = -FULL_ROTATION,
 }
