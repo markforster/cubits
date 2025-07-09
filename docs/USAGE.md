@@ -95,7 +95,7 @@ The Cube uses an internal property called state to manage the information about 
 An instance of a cube can be created passing a CubeState to its constructor allowing you to see changes made to the state directly from manipulate through a cubes ICube interface.
 
 > [!CAUTION]
-> Cubestate is intentionally hidden within a Cube instance. Work is ongoing to expose cubestate via its private property as readonly but this feature is yet to be added. Caution should be taken directly accessing the cube state as changes to the inner Vertices could cause features to break. See details here [src/cube/index.ts](../blob/master/src/cube/index.ts).
+> From v0.2.2 `cube.state` returns a snapshot of the cubes internal state. The returned value is a deep clone and mutating it will **not** alter the cube. Directly referencing the internal state is still possible by storing the `CubeState` passed to the constructor.
 
 ```typescript
 import {
