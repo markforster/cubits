@@ -22,7 +22,7 @@ export function rotateLayer(
     if (layer === LAYERS.MIDDLE) return [AxisVertex.PITCH, angle];
 
     if (layer === LAYERS.FRONT) return [AxisVertex.ROLL, angle];
-    if (layer === LAYERS.BACK) return [AxisVertex.ROLL, angle];
+    if (layer === LAYERS.BACK) return [AxisVertex.ROLL, -angle];
     if (layer === LAYERS.STANDING) return [AxisVertex.ROLL, angle];
   })();
 
