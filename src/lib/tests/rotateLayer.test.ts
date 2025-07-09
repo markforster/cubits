@@ -14,8 +14,6 @@ import { newCubeState } from '../factory';
 import { Layer } from '../rotate';
 import { rotateLayer } from '../rotateLayer';
 import { expectDefaultCubeState } from './lib';
-
-// TODO: Complete these tests. They are blocked by having a good way to query the cube!
 describe(`Rotating layers`, () => {
   describe(`Rotating the top (White) layer clockwise`, () => {
     let cubeState: CubeState;
@@ -162,7 +160,46 @@ describe(`Rotating layers`, () => {
       });
     });
     
-    describe(`After rotating`, () => {});
+    describe(`After rotating`, () => {
+      let bottomRight: Vertex[];
+      let backBottom: Vertex[];
+
+      beforeAll(() => {
+        cubeState = newCubeState();
+        bottomRight = [
+          [2, -1, -1],
+          [2, -1, 0],
+          [2, -1, 1],
+        ];
+        backBottom = [
+          [-1, -1, 2],
+          [0, -1, 2],
+          [1, -1, 2],
+        ];
+
+        rotateLayer(Layer.BOTTOM, CubeRotationDirection.ClockWise, cubeState);
+      });
+
+      it('The bottom of the cube should remain yellow', () => {
+        expect(coloursForVertices(bottomI, cubeState)).toEqual(ALL_YELLOW_COLOURS);
+      });
+
+      it('The top right of the cube should remain red', () => {
+        expect(coloursForVertices(topRight, cubeState)).toEqual([cR, cR, cR]);
+      });
+
+      it('The top front of the cube should remain green', () => {
+        expect(coloursForVertices(frontTop, cubeState)).toEqual([cG, cG, cG]);
+      });
+
+      it('The bottom right of the cube should be green', () => {
+        expect(coloursForVertices(bottomRight, cubeState)).toEqual([cG, cG, cG]);
+      });
+
+      it('The bottom back of the cube should be red', () => {
+        expect(coloursForVertices(backBottom, cubeState)).toEqual([cR, cR, cR]);
+      });
+    });
   });
 
   describe(`Rotating the bottom (Yellow) layer clockwise`, () => {
