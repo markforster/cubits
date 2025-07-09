@@ -13,9 +13,10 @@ import { CubeRotationDirection, Orientation } from './lib';
  */
 export interface ICubePuzzle {
   /**
-   * The current state of the Rubiks Cube.
+   * Snapshot of the cube's current state.
+   * Modifying this value will not affect the cube.
    */
-  state: CubeState;
+  readonly state: CubeState;
 
   /**
    * Checks if the Rubiks Cube is solved, optionally for a specific color.

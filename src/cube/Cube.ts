@@ -17,14 +17,21 @@ import { IFace } from './IFace';
 import { CubeRotationDirection, Orientation } from './lib';
 
 export class Cube implements ICube {
-  readonly state: CubeState;
+  private readonly _state: CubeState;
 
   constructor(cubeState?: CubeState) {
-    this.state = cubeState || newCubeState();
+    this._state = cubeState || newCubeState();
+  }
+
+  get state(): CubeState {
+    return this._state.map(([p, o]) => [
+      [...p] as typeof p,
+      [...o] as typeof o,
+    ]) as CubeState;
   }
 
   solved(colour?: COLOURS): boolean {
-    return solved(this.state, colour);
+    return solved(this._state, colour);
   }
 
   orientate(
@@ -33,7 +40,7 @@ export class Cube implements ICube {
     lockedOrientation?: Orientation,
   ): void {
     rotateCubeState(
-      this.state,
+      this._state,
       LayersVertex[sourceOrientation],
       LayersVertex[targetOrientation],
       (lockedOrientation && LayersVertex[lockedOrientation]) || undefined,
@@ -43,8 +50,8 @@ export class Cube implements ICube {
   rotate(axis: Axis, direction: CubeRotationDirection, times?: number) {
     const angle = direction * FULL_ROTATION * (times ? times : 1);
     rotateVectorsAtindices(
-      this.state,
-      this.state.map((_v: any, i: number) => i),
+      this._state,
+      this._state.map((_v: any, i: number) => i),
       angle,
       AxisToVertex[KeysForEnum(Axis)[axis]],
     );
@@ -52,7 +59,7 @@ export class Cube implements ICube {
 
   rotateLayerForColour(colour: COLOURS, direction: CubeRotationDirection) {
     const angle = direction * FULL_ROTATION;
-    rotateLayerForColour(this.state, colour, angle);
+    rotateLayerForColour(this._state, colour, angle);
   }
 
   rotateLayer(
@@ -62,14 +69,14 @@ export class Cube implements ICube {
   ): void {
     if (times && times > 0 && times < 4) {
       for (let i = 0; i < times; i++) {
-        rotateLayer(layer, direction, this.state);
+        rotateLayer(layer, direction, this._state);
       }
     } else {
-      rotateLayer(layer, direction, this.state);
+      rotateLayer(layer, direction, this._state);
     }
   }
 
   face(option: FaceOption): IFace {
-    return faceForFaceOption(this.state, option);
+    return faceForFaceOption(this._state, option);
   }
 }
