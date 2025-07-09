@@ -6,5 +6,4 @@ export function crossProduct(vect_A: Vertex, vect_B: Vertex): Vertex {
   cross_P[1] = vect_A[2] * vect_B[0] - vect_A[0] * vect_B[2];
   cross_P[2] = vect_A[0] * vect_B[1] - vect_A[1] * vect_B[0];
 
-  return cross_P;
-}
+  return cross_P;}
