@@ -37,7 +37,7 @@ export const NormalsVertex: Record<string, Vertex> = Object.freeze({
   // Add more matrices as needed
 } as const);
 
-export { compareArray } from './compareArray';
+export { arrayEquals } from './arrayEquals';
 
 // export { colourForIndex } from "./colourForIndex";
 

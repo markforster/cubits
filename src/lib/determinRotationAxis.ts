@@ -1,5 +1,5 @@
 import { Vertex } from '..';
-import { LayersVertex, compareArray } from '.';
+import { LayersVertex, arrayEquals } from '.';
 import { binaryToArray } from './binaryToArray';
 import { maskVerticesToBitArray } from './maskVerticesToBitArray';
 import { normaliseVertex } from './normaliseVertex';
@@ -27,7 +27,7 @@ export const determinRotationAxis = (
 
   if (((mask1 | mask2) ^ 0b111) !== mask3) {
     if (mask1 === mask2) {
-      if (compareArray(v1, preferredAxisLock)) return preferredTopAxis;
+      if (arrayEquals(v1, preferredAxisLock)) return preferredTopAxis;
       return binaryToArray(mask3) as Vertex;
     } else if (lockedAxis !== undefined) {
       throw new Error(

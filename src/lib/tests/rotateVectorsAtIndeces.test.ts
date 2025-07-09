@@ -1,7 +1,7 @@
 import {
   rotateVectorsAtindices,
   indicesForNormal,
-  compareArray,
+  arrayEquals,
   AxisVertex,
 } from '..';
 import { CubeState } from '../../cube';
@@ -20,15 +20,15 @@ describe('rotateVectorsAtindices should rotate vectors correctly', () => {
     );
 
     // TODO : Check normals also!!
-    expect(compareArray(cubeState[0][0], [-1, 1, 1])).toBe(true);
-    expect(compareArray(cubeState[1][0], [-1, 1, 0])).toBe(true);
-    expect(compareArray(cubeState[2][0], [-1, 1, -1])).toBe(true);
-    expect(compareArray(cubeState[3][0], [0, 1, 1])).toBe(true);
-    expect(compareArray(cubeState[4][0], [0, 1, 0])).toBe(true);
-    expect(compareArray(cubeState[5][0], [0, 1, -1])).toBe(true);
-    expect(compareArray(cubeState[6][0], [1, 1, 1])).toBe(true);
-    expect(compareArray(cubeState[7][0], [1, 1, 0])).toBe(true);
-    expect(compareArray(cubeState[8][0], [1, 1, -1])).toBe(true);
+    expect(arrayEquals(cubeState[0][0], [-1, 1, 1])).toBe(true);
+    expect(arrayEquals(cubeState[1][0], [-1, 1, 0])).toBe(true);
+    expect(arrayEquals(cubeState[2][0], [-1, 1, -1])).toBe(true);
+    expect(arrayEquals(cubeState[3][0], [0, 1, 1])).toBe(true);
+    expect(arrayEquals(cubeState[4][0], [0, 1, 0])).toBe(true);
+    expect(arrayEquals(cubeState[5][0], [0, 1, -1])).toBe(true);
+    expect(arrayEquals(cubeState[6][0], [1, 1, 1])).toBe(true);
+    expect(arrayEquals(cubeState[7][0], [1, 1, 0])).toBe(true);
+    expect(arrayEquals(cubeState[8][0], [1, 1, -1])).toBe(true);
   });
 
   it('Should have rotated the vectors around the Z axis 90 degrees', () => {
@@ -64,15 +64,15 @@ describe('rotateVectorsAtindices should rotate vectors correctly', () => {
     );
 
     // TODO : Check normals also!!
-    // expect(compareArray(cubeState[0][0], [ -1,  -1,  -1])).toBe(true);
+    // expect(arrayEquals(cubeState[0][0], [ -1,  -1,  -1])).toBe(true);
     expect(cubeState[0][0]).toEqual([1, 1, -1]);
-    // expect(compareArray(cubeState[1][0], [  0,  1,  1])).toBe(true);
-    // expect(compareArray(cubeState[2][0], [  1,  1,  1])).toBe(true);
-    // expect(compareArray(cubeState[3][0], [ -1,  0,  1])).toBe(true);
-    // expect(compareArray(cubeState[4][0], [  0,  0,  1])).toBe(true);
-    // expect(compareArray(cubeState[5][0], [  1,  0,  1])).toBe(true);
-    // expect(compareArray(cubeState[6][0], [ -1, -1,  1])).toBe(true);
-    // expect(compareArray(cubeState[7][0], [  0, -1,  1])).toBe(true);
-    // expect(compareArray(cubeState[8][0], [  1, -1,  1])).toBe(true);
+    // expect(arrayEquals(cubeState[1][0], [  0,  1,  1])).toBe(true);
+    // expect(arrayEquals(cubeState[2][0], [  1,  1,  1])).toBe(true);
+    // expect(arrayEquals(cubeState[3][0], [ -1,  0,  1])).toBe(true);
+    // expect(arrayEquals(cubeState[4][0], [  0,  0,  1])).toBe(true);
+    // expect(arrayEquals(cubeState[5][0], [  1,  0,  1])).toBe(true);
+    // expect(arrayEquals(cubeState[6][0], [ -1, -1,  1])).toBe(true);
+    // expect(arrayEquals(cubeState[7][0], [  0, -1,  1])).toBe(true);
+    // expect(arrayEquals(cubeState[8][0], [  1, -1,  1])).toBe(true);
   });
 });
