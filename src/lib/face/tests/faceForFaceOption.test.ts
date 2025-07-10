@@ -1,8 +1,12 @@
 import { FaceOption } from '..';
 import { CubeState } from '../../../cube';
+import { Cube } from '../../../cube/Cube';
+import { CubeRotationDirection } from '../../../cube/lib';
+import { Axis } from '../../rotate';
 import { IFace } from '../../../cube/IFace';
 import { newCubeState } from '../../factory';
 import { faceForFaceOption } from '../faceForFaceOption';
+import { COLOURS } from '../../colours';
 import * as lib from './faceForFaceOption.lib';
 
 describe('Getting a face for a face option', () => {
@@ -100,14 +104,33 @@ describe('Getting a face for a face option', () => {
   });
 
   describe('Given a cube state rotated around the WHITE layer', () => {
-    test.todo(
-      'Need to setup cube and rotate then cross references all colours, normals and positions',
-    );
+    beforeEach(() => {
+      const cube = new Cube(cubeState);
+      cube.rotateLayerForColour(COLOURS.WHITE, CubeRotationDirection.ClockWise);
+    });
+
+    it('Should keep white colours but change normals and positions', () => {
+      const face: IFace = faceForFaceOption(cubeState, FaceOption.WHITE);
+
+      expect(face.colours).toEqual(lib.ALL_WHITE_COLOURS);
+      expect(face.indices).toEqual(lib.INDICES_FOR_WHITE);
+      expect(face.normals).not.toEqual(lib.NORMALS_FOR_WHITE);
+      expect(face.positions).not.toEqual(lib.POSITIONS_FOR_WHITE);
+    });
   });
 
   describe('Given a cube state rotated around its axis by Pitch', () => {
-    test.todo(
-      'Need to setup cube and rotate then cross references all colours, normals and positions',
-    );
+    beforeEach(() => {
+      const cube = new Cube(cubeState);
+      cube.rotate(Axis.X, CubeRotationDirection.ClockWise);
+    });
+
+    it('Should update the top face after rotation', () => {
+      const face: IFace = faceForFaceOption(cubeState, FaceOption.TOP);
+
+      expect(face.colours).not.toEqual(lib.ALL_WHITE_COLOURS);
+      expect(face.normals).not.toEqual(lib.NORMALS_FOR_WHITE);
+      expect(face.positions).not.toEqual(lib.POSITIONS_FOR_WHITE);
+    });
   });
 });

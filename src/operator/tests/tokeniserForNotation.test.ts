@@ -2,6 +2,7 @@ import { tokeniserForNotation } from '../lib';
 import { action as sectionAction } from './../actions/rotateSections';
 import { action as rotateAllAction } from './../actions/rotateAll';
 import { action as rotateFaceAction } from './../actions/rotateFaces';
+import { action as orientateAction } from './../actions/orientate';
 
 describe(`Mapping a tokeniser from notation`, () => {
   describe(`Matching the EMS tokeniser`, () => {
@@ -106,5 +107,13 @@ describe(`Mapping a tokeniser from notation`, () => {
     });
   });
 
-  test.todo('Test for Orientation!');
+  describe('Matching the orientation tokeniser', () => {
+    it('Should find the orientation tokeniser when passed "fR"', () => {
+      expect(tokeniserForNotation('fR').callback).toBe(orientateAction);
+    });
+
+    it('Should find the orientation tokeniser when passed "uD"', () => {
+      expect(tokeniserForNotation('uD').callback).toBe(orientateAction);
+    });
+  });
 });
