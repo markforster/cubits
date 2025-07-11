@@ -4,7 +4,7 @@ export enum TurnType {
   OuterLayerRotation = 'OuterLayerRotation',
   InnerLayerRotation = 'InnerLayerRotation',
   CubeRotation = 'CubeRotation',
-  Orientation = 'Orienation',
+  Orientation = 'Orientation',
 }
 
 export type Turn = {
