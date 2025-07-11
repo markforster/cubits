@@ -3,7 +3,10 @@ import { Orientation } from '../../cube/lib';
 import { LayersVertex } from '../../lib';
 import { Turn, TurnType } from '../types';
 
-const faceMapping: Record<string, any> = {
+export type FaceChar = 'u' | 'd' | 'f' | 'b' | 'l' | 'r';
+export type OrientationChar = 'U' | 'D' | 'F' | 'B' | 'L' | 'R';
+
+const faceMapping: Record<FaceChar, Orientation> = {
   u: Orientation.TOP,
   d: Orientation.BOTTOM,
   f: Orientation.FRONT,
@@ -12,7 +15,7 @@ const faceMapping: Record<string, any> = {
   r: Orientation.RIGHT,
 };
 
-const orientationMapping: Record<string, any> = {
+const orientationMapping: Record<OrientationChar, Orientation> = {
   U: Orientation.TOP,
   D: Orientation.BOTTOM,
   F: Orientation.FRONT,
@@ -21,10 +24,12 @@ const orientationMapping: Record<string, any> = {
   R: Orientation.RIGHT,
 };
 
-function orientationsForToken(token: string): [Orientation, Orientation] {
+export function orientationsForToken(
+  token: string,
+): [Orientation | undefined, Orientation | undefined] {
   if (!token) return [undefined, undefined];
-  const sourceFace = token[0];
-  const targetAxis = token[1];
+  const sourceFace = token[0] as FaceChar;
+  const targetAxis = token[1] as OrientationChar;
 
   return [faceMapping[sourceFace], orientationMapping[targetAxis]];
 }
