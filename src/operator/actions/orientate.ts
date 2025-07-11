@@ -1,6 +1,5 @@
 import { ICube } from '../../cube/ICube';
 import { Orientation } from '../../cube/lib';
-import { LayersVertex } from '../../lib';
 import { Turn, TurnType } from '../types';
 
 export type FaceChar = 'u' | 'd' | 'f' | 'b' | 'l' | 'r';
