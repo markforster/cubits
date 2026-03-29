@@ -35,7 +35,7 @@
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "bundle-declarations-webpack-plugin": "^4.0.1",
-    "copy-webpack-plugin": "^11.0.0",
+    "copy-webpack-plugin": "^14.0.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
