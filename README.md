@@ -1,25 +1,24 @@
-# Rubiks Cube TypeScript Library
+# Rubik's Cube TypeScript Library
 
 ![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/markforster/c101d6d2eb46daca41a0d4139367c468/raw/test.json)
- [![Tests](https://github.com/markforster/cubits/actions/workflows/tests.yml/badge.svg)](https://github.com/markforster/cubits/actions/workflows/tests.yml)
+[![Tests](https://github.com/markforster/cubits/actions/workflows/tests.yml/badge.svg)](https://github.com/markforster/cubits/actions/workflows/tests.yml)
 
-This typeScript module provides a representation of a Rubiks Cube and a set of functionalities to interact with it. The library is designed to be flexible and easily integrated into your projects. 
+`@markforster/cubits` is a TypeScript library for modelling and manipulating a Rubik's Cube. It provides a cube representation, rotation and orientation mechanics, face inspection helpers, and a notation operator that can execute standard cube notation against the current cube state.
 
-Out of interest you can find an insightful technical specification for the rubiks cube [here](https://homes.luddy.indiana.edu/stsher/files/Rubiks_Cube.pdf)
+For a deeper look at the cube model used by this library, see the [technical specification](https://homes.luddy.indiana.edu/stsher/files/Rubiks_Cube.pdf).
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Initializing a Rubiks Cube](#initializing-a-rubiks-cube)
-  - [Checking the Cube's Solved State](#checking-the-cubes-solved-state)
-  - [Rotating a Cube Layer](#rotating-a-cube-layer)
-  - [Rotating the Cube](#rotating-the-cube)
-  - [Orientating the Cube](#orientating-the-cube)  
-  - [Deriving colour, indices, orientation and normal information from the cubestate](#deriving-colour-indices-orientation-and-normal-information-from-the-cubestate)
-  - [Cube Notation Operator](#cube-notation-operator)
+  - [Create a Cube](#create-a-cube)
+  - [Check Solved State](#check-solved-state)
+  - [Rotate a Layer or the Whole Cube](#rotate-a-layer-or-the-whole-cube)
+  - [Orient the Cube](#orient-the-cube)
+  - [Inspect a Face](#inspect-a-face)
+  - [Execute Cube Notation](#execute-cube-notation)
+- [Further Reading](#further-reading)
 - [Examples](#examples)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -30,11 +29,11 @@ npm install @markforster/cubits
 
 ## Usage
 
-For full information on using the module check the [usage docs](./docs/USAGE.md).
+The README covers the main concepts. For fuller usage details, see [docs/USAGE.md](./docs/USAGE.md).
 
-#### Initializing a Rubiks Cube
+### Create a Cube
 
-An instance of a cube can be created by simply importing the Cube class and creating an instance.
+Create a new cube by instantiating `Cube`.
 
 ```typescript
 import { Cube, ICube } from '@markforster/cubits';
@@ -42,138 +41,129 @@ import { Cube, ICube } from '@markforster/cubits';
 const cube: ICube = new Cube();
 ```
 
-#### Checking the Cube's Solved State
+### Check Solved State
+
+You can check whether the whole cube is solved, or whether a specific colour face is solved.
 
 ```typescript
-import { COLOURS, ICube, AxisVertex } from '@markforster/cubits';
+import { COLOURS, Cube, ICube } from '@markforster/cubits';
 
 const cube: ICube = new Cube();
 
-console.log(`Solved for colour ${COLOURS[COLOURS.WHITE]}:`, cube.solved(COLOURS.WHITE));
-console.log(`Solved for colour ${COLOURS[COLOURS.RED]}:`, cube.solved(COLOURS.RED));
-console.log(`Solved for colour ${COLOURS[COLOURS.BLUE]}:`, cube.solved(COLOURS.BLUE));
-console.log(`Solved for ALL:`, cube.solved());
+console.log(`Solved for ${COLOURS[COLOURS.WHITE]}:`, cube.solved(COLOURS.WHITE));
+console.log(`Solved for ${COLOURS[COLOURS.BLUE]}:`, cube.solved(COLOURS.BLUE));
+console.log('Solved overall:', cube.solved());
 ```
 
-#### Rotating a Cube Layer
+### Rotate a Layer or the Whole Cube
 
-Rotate a single layer of the cube.
+Use `rotateLayerForColour` to turn a face layer, and `rotate` to rotate the cube around one of its axes.
 
 ```typescript
-import { CubeRotationDirection, ICube, COLOURS } from '@markforster/cubits';
+import {
+  Axis,
+  COLOURS,
+  Cube,
+  CubeRotationDirection,
+  ICube,
+} from '@markforster/cubits';
 
 const cube: ICube = new Cube();
 
 cube.rotateLayerForColour(COLOURS.BLUE, CubeRotationDirection.ClockWise);
-cube.rotateLayerForColour(COLOURS.BLUE, CubeRotationDirection.AntiClockWise);
+cube.rotate(Axis.X, CubeRotationDirection.ClockWise);
 ```
 
-#### Rotating the Cube
+### Orient the Cube
 
-Rotate the cube as a whole.
-
-```typescript
-import { Cube, ICube, AxisVertex, CubeRotationDirection } from "@markforster/cubits"
-
-const cube: ICube = new Cube();
-cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
-```
-
-#### Orientating the Cube
-
-Orientates the face of one cube to the position of another. Optionally a locked face can be provided that will be locked to ensure the orientation does not disturb it when orientating the source face to the target face. The example below will move the top face to the left then the back face to the front locking the now left face ensuring it is not disturbed. This allows us to orientate the cube should we wish to run algorithms against it.
-
+Use `orientate` to move one face orientation into another. You can also lock a third orientation so it is preserved while the cube is reoriented.
 
 ```typescript
-import { Cube, ICube, AxisVertex, CubeRotationDirection } from "@markforster/cubits"
+import { Cube, ICube, Orientation } from '@markforster/cubits';
 
 const cube: ICube = new Cube();
+
 cube.orientate(Orientation.TOP, Orientation.LEFT);
 cube.orientate(Orientation.BACK, Orientation.FRONT, Orientation.LEFT);
 ```
 
-#### Deriving colour, indices, orientation and normal information from the cubestate
+### Inspect a Face
+
+Use `face` or `faceForFaceOption` to inspect a face by colour or orientation. Returned face data is derived from the current cube state and updates as the cube changes.
 
 ```typescript
-import { COLOURS } from '@markforster/cubits/';
-import { IFace } from '@markforster/cubits/';
-import { faceForFaceOption } from '@markforster/cubits/';
-import { CubeState } from '@markforster/cubits/';
-import { Cube } from '@markforster/cubits/';
-import { newCubeState } from '@markforster/cubits/';
-import { ICube } from '@markforster/cubits/';
-import { CubeRotationDirection } from '@markforster/cubits/';
-import { FaceOption } from '@markforster/cubits/';
-import { AxisVertex } from '@markforster/cubits//';
+import {
+  Cube,
+  CubeRotationDirection,
+  FaceOption,
+  ICube,
+  IFace,
+  Axis,
+} from '@markforster/cubits';
 
-const renderColours = (colours: COLOURS[] | undefined, title: string) => {
-  if (colours !== undefined) {
-    console.log(
-      title,
-      colours.map((c: COLOURS) => COLOURS[c]),
-    );
-  }
-};
+const cube: ICube = new Cube();
+const topFace: IFace = cube.face(FaceOption.TOP);
+const whiteFace: IFace = cube.face(FaceOption.WHITE);
 
-const cubeState: CubeState = newCubeState();
-const cube: ICube = new Cube(cubeState);
+console.log('Top face colours:', topFace.colours);
+console.log('White face colours:', whiteFace.colours);
 
-const normalFace: IFace = faceForFaceOption(cubeState, FaceOption.TOP);
-const colourFace: IFace = faceForFaceOption(cubeState, FaceOption.WHITE);
+cube.rotate(Axis.X, CubeRotationDirection.ClockWise);
 
-console.log('IFace > FaceOption.WHITE', colourFace.colours);
-console.log('IFace > FaceOption.TOP', normalFace.colours);
-
-renderColours(colourFace.colours, 'colourFace.colours');
-renderColours(normalFace.colours, 'normalFace.colours');
-
-cube.rotate(AxisVertex.PITCH, CubeRotationDirection.ClockWise);
-
-cube.rotateLayerForColour(COLOURS.BLUE, CubeRotationDirection.ClockWise);
-
-renderColours(colourFace.colours, 'colourFace.colours');
-renderColours(normalFace.colours, 'normalFace.colours');
-
-console.log('colourFace.normals', colourFace.normals);
+console.log('Top face colours after rotation:', topFace.colours);
+console.log('White face normals after rotation:', whiteFace.normals);
 ```
 
-#### Cube Notation Operator
-A cube operator is capable of translating cube notation and performing operations on a cube.
+If you need direct access to a shared `CubeState`, pass one to the constructor:
 
-The operator can parse and tokenise all [standard cube notation](https://ruwix.com/the-rubiks-cube/notation/). and includes a super set that can be used for orientating the cube. Super set notation follows the format of: 
+```typescript
+import {
+  Axis,
+  Cube,
+  CubeRotationDirection,
+  CubeState,
+  ICube,
+  newCubeState,
+} from '@markforster/cubits';
 
-*face in lowercase* : *target face in uppercase*
-
-for example: 'lU' moves the left face to the Up face orientation, 'bR' moves the back face to the Right face orientation. 
-
-Chaining superset notation allows the cube to be orientated to 2 faces. When executing superset notation the current turn will evaluate the last turn to determine wether it was an orientation token and ensure that the current turn does not disturb the last orientation target face.
-
-``` typescript
 const cubeState: CubeState = newCubeState();
-
 const cube: ICube = new Cube(cubeState);
+
+console.log(cubeState);
+
+cube.rotate(Axis.X, CubeRotationDirection.ClockWise);
+
+console.log(cubeState);
+```
+
+Note: `cube.state` returns a deep-cloned snapshot. Mutating that snapshot will not change the cube.
+
+### Execute Cube Notation
+
+`Operator` can parse and execute [standard cube notation](https://ruwix.com/the-rubiks-cube/notation/) against a cube.
+
+The library also supports orientation tokens in the form `lU`, where the lowercase face is moved to the uppercase target orientation. Chaining orientation tokens allows you to orient the cube across two faces while preserving the previously targeted face where possible.
+
+```typescript
+import { Cube, ICube, IOperator, Operator } from '@markforster/cubits';
+
+const cube: ICube = new Cube();
 const operator: IOperator = new Operator();
+
 operator.cube = cube;
-
-// const notation = `fUuLRRUR'XXZ`;
-const notation = `XXYX'ULLUL2R'B2E2M'ZS'2`;
-
-cubeExample(
-  `Executing cube notation "${notation}"`,
-  (cube: ICube) => {
-    showCubeDetails(cube, 'Starting Cube');
-
-    operator.execute(notation);
-
-    showCubeDetails(cube, 'Cube after performing notation');
-  },
-  cube,
-);
+operator.execute("R U R' U'");
+operator.execute('lU');
 ```
+
+## Further Reading
+
+- Full usage notes: [docs/USAGE.md](./docs/USAGE.md)
+- Additional implementation and demo code: [examples](./examples)
+
 ## Examples
 
 Check the [examples](./examples) directory for additional usage scenarios and demonstrations.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
