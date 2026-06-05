@@ -6,6 +6,9 @@
   "scripts": {
     "build": "./bin/build.sh",
     "examples": "npm --prefix ./examples/ run example",
+    "fallow": "fallow --summary",
+    "fallow:audit": "fallow audit --gate all --changed-since develop",
+    "fallow:dead-code": "fallow dead-code",
     "test": "jest --passWithNoTests --roots ./src --silent --coverage --coverageDirectory test-reports --watchman=false"
   },
   "author": "markforster",
@@ -37,6 +40,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "fallow": "^2.88.3",
     "jest": "^29.6.2",
     "jest-html-reporter": "^3.10.1",
     "jest-html-reporters": "^3.1.4",

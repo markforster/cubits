@@ -164,6 +164,18 @@ operator.execute('lU');
 
 Check the [examples](./examples) directory for additional usage scenarios and demonstrations.
 
+## Codebase Analysis
+
+This repository includes [`fallow`](https://github.com/fallow-rs/fallow) for whole-codebase analysis.
+
+```bash
+npm run fallow
+npm run fallow:dead-code
+npm run fallow:audit
+```
+
+`npm run fallow:audit` compares the current work against `develop`.
+
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
