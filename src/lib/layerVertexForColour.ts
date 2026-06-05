@@ -1,4 +1,4 @@
-import { CubeState } from '../cube';
+import { CubeState } from '../cube/state';
 import { Vertex } from '../cube/lib';
 import { COLOURS } from './colours';
 import { MARKERS } from './markers';

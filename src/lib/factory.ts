@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 
-import { CubeState } from '../cube';
+import { CubeState } from '../cube/state';
 import { Vertex, Vector } from '../cube/lib';
 
 export const flattenCubeState = (state: CubeState): number[] => {

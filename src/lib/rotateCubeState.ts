@@ -1,9 +1,9 @@
-import { rotateVectorsAtindices } from '.';
-import { CubeState } from '../cube';
+import { CubeState } from '../cube/state';
 import { Vertex } from '../cube/lib';
 import { arrayEquals } from './arrayEquals';
 import { crossProduct } from './crossProduct';
 import { determinRotationAxis } from './determinRotationAxis';
+import { rotateVectorsAtindices } from './rotateVectorsAtindices';
 
 export const rotateCubeState = (
   cubestate: CubeState,

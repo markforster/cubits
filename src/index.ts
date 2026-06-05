@@ -5,11 +5,11 @@ export { layerNormalForColour } from './lib/layerVertexForColour';
 export { newCubeState } from './lib/factory';
 export { faceForFaceOption } from './lib/face/faceForFaceOption';
 
-export { AxisVertex } from './lib/';
+export { AxisVertex } from './lib/vectors';
 
 export { COLOURS } from './lib/colours';
 export { LAYERS } from './lib/layers';
-export { CubeState } from './cube/';
+export { CubeState } from './cube/state';
 
 export { Cube } from './cube/Cube';
 export { ICube } from './cube/ICube';

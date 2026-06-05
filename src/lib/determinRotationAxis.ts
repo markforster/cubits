@@ -1,6 +1,7 @@
-import { Vertex } from '..';
-import { LayersVertex, arrayEquals } from '.';
+import { Vertex } from '../cube/lib';
+import { arrayEquals } from './arrayEquals';
 import { binaryToArray } from './binaryToArray';
+import { LayersVertex } from './vectors';
 import { maskVerticesToBitArray } from './maskVerticesToBitArray';
 import { normaliseVertex } from './normaliseVertex';
 

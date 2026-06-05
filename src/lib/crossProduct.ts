@@ -1,4 +1,4 @@
-import { Vertex } from '..';
+import { Vertex } from '../cube/lib';
 
 export function crossProduct(vect_A: Vertex, vect_B: Vertex): Vertex {
   const cross_P: Vertex = [0, 0, 0] as Vertex;

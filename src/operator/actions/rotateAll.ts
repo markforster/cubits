@@ -1,5 +1,5 @@
-import { CubeRotationDirection } from '../..';
 import { ICube } from '../../cube/ICube';
+import { CubeRotationDirection } from '../../cube/lib';
 import { ValuesForEnum, KeysForEnum } from '../../lib/enums';
 import { Axis } from '../../lib/rotate';
 import { Turn, TurnType } from '../types';

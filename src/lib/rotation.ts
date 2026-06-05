@@ -1,4 +1,4 @@
-import { Vertex } from '../cube/lib';
+import type { Vertex } from '../cube/lib';
 
 export const FULL_ROTATION = 90.0;
 

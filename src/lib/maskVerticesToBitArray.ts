@@ -1,4 +1,4 @@
-import { Vertex } from '..';
+import { Vertex } from '../cube/lib';
 
 export const maskVerticesToBitArray = (vertex: Vertex): number => {
   return vertex

@@ -1,5 +1,5 @@
-import { PrimaryUnit } from '.';
-import { Vertex } from '..';
+import { PrimaryUnit } from './primaryUnit';
+import { Vertex } from '../cube/lib';
 
 export const primaryNonUndefinedUnit = (v: Vertex): PrimaryUnit => {
   // Filter out all zero values from the Vertex array.

@@ -1,5 +1,4 @@
-import { CubeState } from '.';
-import { LayersVertex, rotateVectorsAtindices } from '../lib';
+import { CubeState } from './state';
 import { COLOURS } from '../lib/colours';
 import { KeysForEnum } from '../lib/enums';
 import { FaceOption } from '../lib/face';
@@ -10,8 +9,10 @@ import { Axis, AxisToVertex } from '../lib/rotate';
 import { rotateCubeState } from '../lib/rotateCubeState';
 import { rotateLayer } from '../lib/rotateLayer';
 import { rotateLayerForColour } from '../lib/rotateLayerForColour';
+import { rotateVectorsAtindices } from '../lib/rotateVectorsAtindices';
 import { FULL_ROTATION } from '../lib/rotation';
 import { solved } from '../lib/solution/solved';
+import { LayersVertex } from '../lib/vectors';
 import { ICube } from './ICube';
 import { IFace } from './IFace';
 import { CubeRotationDirection, Orientation } from './lib';

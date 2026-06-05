@@ -1,5 +1,6 @@
-import { PrimaryUnit } from '.';
 import { Vertex } from '../cube/lib';
+
+export type PrimaryUnit = [number | null, number];
 
 /**
  * Finds the primary unit of the given Vertex array.

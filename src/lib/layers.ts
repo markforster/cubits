@@ -1,4 +1,4 @@
-import { Vertex } from '..';
+import { Vertex } from '../cube/lib';
 
 export enum LAYERS {
   TOP,

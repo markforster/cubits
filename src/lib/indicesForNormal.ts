@@ -1,7 +1,6 @@
-import { PrimaryUnit } from '.';
-import { CubeState } from '../cube';
+import { PrimaryUnit } from './primaryUnit';
+import { CubeState } from '../cube/state';
 import { Vertex, Vector } from '../cube/lib';
-
 import { primaryUnit } from './primaryUnit';
 
 /**

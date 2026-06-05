@@ -1,8 +1,10 @@
-import { AxisVertex, rotateVectorsAtindices } from '.';
-import { CubeRotationDirection, CubeState, Vertex } from '..';
+import { CubeState } from '../cube/state';
+import { CubeRotationDirection, Vertex } from '../cube/lib';
 import { indicesForvertices } from './indicesForvertices';
 import { LAYERS, VertexForLayer } from './layers';
+import { rotateVectorsAtindices } from './rotateVectorsAtindices';
 import { FULL_ROTATION } from './rotation';
+import { AxisVertex } from './vectors';
 
 export function rotateLayer(
   layer: LAYERS,

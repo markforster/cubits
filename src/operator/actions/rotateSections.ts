@@ -1,4 +1,5 @@
-import { CubeRotationDirection, ICube } from '../..';
+import { ICube } from '../../cube/ICube';
+import { CubeRotationDirection } from '../../cube/lib';
 import { LAYERS } from '../../lib/layers';
 import { Turn, TurnType } from '../types';
 

@@ -1,4 +1,4 @@
-import { CubeState } from '.';
+import { CubeState } from './state';
 import { COLOURS } from '../lib/colours';
 import { FaceOption } from '../lib/face';
 import { LAYERS } from '../lib/layers';

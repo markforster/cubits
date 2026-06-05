@@ -1,6 +1,6 @@
-import { Vector, colourForIndex } from '..';
-import { CubeState } from '../cube';
-import { Vertex } from '../cube/lib';
+import { Vector, Vertex } from '../cube/lib';
+import { CubeState } from '../cube/state';
+import { colourForIndex } from './colourForIndex';
 import { COLOURS } from './colours';
 import { arrayEquals } from './arrayEquals';
 

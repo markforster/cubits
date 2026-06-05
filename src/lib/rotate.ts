@@ -1,4 +1,4 @@
-import { AxisVertex as _AxisVertex } from '.';
+import { AxisVertex as _AxisVertex } from './vectors';
 import { Vertex } from '../cube/lib';
 
 export { LAYERS as Layer } from './layers';

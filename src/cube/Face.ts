@@ -1,11 +1,12 @@
-import { CubeState } from '.';
-import { NormalsVertex, indicesForNormal } from '../lib';
+import { CubeState } from './state';
 import { colourForIndex } from '../lib/colourForIndex';
 import { COLOURS } from '../lib/colours';
 import { FaceOption, faceOrientationKeys, faceColourKeys } from '../lib/face';
 import { colorForFaceOption } from '../lib/face/colorForFaceOption';
+import { indicesForNormal } from '../lib/indicesForNormal';
 import { orientationForFaceOption } from '../lib/face/orientationForFaceOption';
 import { layerNormalForColour } from '../lib/layerVertexForColour';
+import { NormalsVertex } from '../lib/vectors';
 import { FaceColors, FaceNormals, IFace } from './IFace';
 import { Vertex } from './lib';
 

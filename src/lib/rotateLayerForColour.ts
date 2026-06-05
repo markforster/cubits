@@ -1,10 +1,10 @@
-import { LayersVertex, AxisVertex } from '.';
-import { CubeState } from '../cube';
+import { CubeState } from '../cube/state';
 import { RotationAngle, Vertex } from '../cube/lib';
 import { rotateLayerForVertex } from './rotateLayerForVertex';
 import { arrayEquals } from './arrayEquals';
 import { COLOURS } from './colours';
 import { layerVertexForColour } from './layerVertexForColour';
+import { AxisVertex, LayersVertex } from './vectors';
 
 export const rotateLayerForColour = (
   cubeState: CubeState,
