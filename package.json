@@ -9,6 +9,7 @@
     "fallow": "fallow --summary",
     "fallow:audit": "fallow audit --gate all --changed-since develop",
     "fallow:dead-code": "fallow dead-code",
+    "fallow:dupes": "fallow dupes",
     "test": "jest --passWithNoTests --roots ./src --silent --coverage --coverageDirectory test-reports --watchman=false"
   },
   "author": "markforster",

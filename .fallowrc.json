@@ -10,6 +10,8 @@
     "dist/**",
     "coverage/**",
     "test-reports/**",
+    "src/**/tests/**",
+    "src/**/*.test.*",
     "jest.config.ts",
     "webpack.config.ts"
   ],

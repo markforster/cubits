@@ -171,10 +171,12 @@ This repository includes [`fallow`](https://github.com/fallow-rs/fallow) for who
 ```bash
 npm run fallow
 npm run fallow:dead-code
+npm run fallow:dupes
 npm run fallow:audit
 ```
 
 `npm run fallow:audit` compares the current work against `develop`.
+`npm run fallow:dupes` reports code duplication within the configured `src` scope.
 
 ## License
 
