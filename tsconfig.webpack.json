@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES2020",
     "module": "es6",
     "experimentalDecorators": true,
     "outDir": "dist",
     "rootDir": "./src",
     "removeComments": true,
     "lib":[
-      "es2015"
+      "ES2020"
     ],
     "esModuleInterop":true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "ignoreDeprecations": "5.0"
   },
   "transpileOnly": false,
   "include": ["src"],

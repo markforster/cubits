@@ -1,12 +1,8 @@
-rm -r ./dist
+#!/usr/bin/env bash
 
+set -euo pipefail
 
-# Webpack
+rm -rf ./dist
+
 echo "Building with webpack..."
-# webpack
-NODE_ENV=production webpack
-
-# TSC
-# tsc 
-# chmod +x ./dist/bin.js
-
+npx webpack

@@ -1,5 +1,5 @@
 import * as path from 'path';
-import * as nodeExternals from 'webpack-node-externals';
+import nodeExternals from 'webpack-node-externals';
 import { BannerPlugin } from 'webpack';
 import BundleDeclarationsWebpackPlugin from 'bundle-declarations-webpack-plugin';
 
